@@ -1,0 +1,21 @@
+{
+  "minecraft:entity": {
+    "format_version": "1.2.0",
+
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:balloon"
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.4
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:balloon": {
+        "lift_force": [ 0.0, 1.6, 0.0 ]
+      }
+    }
+  }
+}
