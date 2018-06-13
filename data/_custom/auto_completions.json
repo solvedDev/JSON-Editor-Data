@@ -1,0 +1,59 @@
+{
+	"entity": {
+		"define": "$is_path(minecraft:entity/..)", //Defines what an entity file is
+		"basic": "super.entity", //Links to var
+		"extend": [
+			{
+				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
+				"type": "replace", //replace or append
+				"propose": [ //What to propose
+					{
+						"function": "$getData(custom/entity_names.json)"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(minecraft:entity)",
+				"type": "append",
+				"propose": [
+					{
+						"key": "do_not_upgrade",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "($contains(event) and $isnot(event))",
+				"type": "replace",
+				"propose": [
+					{
+						"key": "event",
+						"type": "event"
+					},
+					{
+						"key": "target",
+						"type": "subject"
+					}
+				]
+			},
+			{
+				"recognize": "$is(event)",
+				"type": "append",
+				"propose": [
+					{
+						"function": "$parse_file(minecraft:entity/events)"
+					}
+				]
+			},
+			{
+				"recognize": "$is(../add/component_groups)",
+				"type": "append",
+				"propose": [
+					{
+						"function": "$parse_file(minecraft:entity/component_groups)"
+					}
+				]
+			}
+		]
+	}
+}
