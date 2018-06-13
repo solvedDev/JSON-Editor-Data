@@ -37,7 +37,7 @@
 				]
 			},
 			{
-				"recognize": "$is(event)",
+				"recognize": "$is_type(event)",
 				"type": "append",
 				"propose": [
 					{
@@ -51,6 +51,66 @@
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/component_groups)"
+					}
+				]
+			}
+		]
+	},
+	"loot_table": {
+		"define": "$is_path(pools/..)",
+		"basic": "super.none",
+		"extend": [
+			{
+				"recognize": "$is(pools)",
+				"type": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../pools/.)",
+				"type": "replace",
+				"propose": [
+					{
+						"key": "rolls",
+						"type": "number"
+					},
+					{
+						"key": "entries",
+						"type": "list"
+					}
+				]
+			},
+			{
+				"recognize": "$is(entries)",
+				"type": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../entries/.)",
+				"type": "replace",
+				"propose": [
+					{
+						"key": "type",
+						"type": "string"
+					},
+					{
+						"key": "name",
+						"type": "string"
+					},
+					{
+						"key": "weight",
+						"type": "number"
+					},
+					{
+						"key": "quality",
+						"type": "number"
 					}
 				]
 			}
