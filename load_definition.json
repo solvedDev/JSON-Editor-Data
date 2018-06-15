@@ -1,8 +1,7 @@
 {
 	"other": [
 		"_custom/auto_completions.json",
-		"_custom/highlighter.json",
-		"BP/documentation.html"
+		"_custom/highlighter.json"
 	],
 	"models": [
 		"mobs.json"
