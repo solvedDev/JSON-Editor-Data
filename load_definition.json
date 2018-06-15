@@ -1,4 +1,9 @@
 {
+	//HTML
+	"html": [
+		"editor_template.html"
+	],
+	
 	//General
 	"other": [
 		"custom/auto_completions.json",
