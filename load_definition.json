@@ -1,0 +1,32 @@
+{
+	"other": [
+		"_custom/auto_completions.json",
+		"_custom/highlighter.json",
+		"BP/documentation.html"
+	],
+	"models": [
+		"mobs.json"
+	],
+	"entities": [
+		"agent.json",
+		"blaze.json"
+	],
+	"loot_tables": [
+
+	],
+	"trades": [
+
+	],
+	"ui": [
+
+	],
+	"material": [
+
+	],
+	"recipes": [
+
+	],
+	"definitions": [
+
+	]
+}

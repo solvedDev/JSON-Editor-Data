@@ -23,7 +23,7 @@
 				]
 			},
 			{
-				"recognize": "($contains(event) and $isnot(event))",
+				"recognize": "($contains(event) and $is_not(event))",
 				"type": "replace",
 				"propose": [
 					{
@@ -46,7 +46,7 @@
 				]
 			},
 			{
-				"recognize": "$is(../add/component_groups)",
+				"recognize": "$is_path(../add/component_groups)",
 				"type": "append",
 				"propose": [
 					{
