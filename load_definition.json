@@ -96,7 +96,6 @@
 		"zombie_villager"
 	],
 	"loot_tables": [
-		"empty.json",
 		"gameplay/fishing.json",
 		"gameplay/fishing/fish.json",
 		"gameplay/fishing/junk.json",
