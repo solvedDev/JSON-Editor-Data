@@ -1,14 +1,98 @@
 {
+	//General
 	"other": [
 		"custom/auto_completions.json",
 		"custom/highlighter.json"
 	],
-	"models": [
-		"mobs.json"
-	],
+
+	//BP
 	"entities": [
-		"agent.json",
-		"blaze.json"
+		"agent",
+		"area_effect_cloud",
+		"armor_stand",
+		"arrow",
+		"balloon",
+		"bat",
+		"blaze",
+		"boat",
+		"cave_spider",
+		"chest_minecart",
+		"chicken",
+		"cod",
+		"command_block_minecart",
+		"cow",
+		"creeper",
+		"dolphin",
+		"donkey",
+		"dragon_fireball",
+		"drowned",
+		"egg",
+		"elder_guardian",
+		"ender_crystal",
+		"ender_dragon",
+		"ender_pearl",
+		"enderman",
+		"endermite",
+		"evocation_illager",
+		"eye_of_ender_signal",
+		"fireball",
+		"fireworks_rocket",
+		"fishing_hook",
+		"ghast",
+		"guardian",
+		"hopper_minecart",
+		"horse",
+		"husk",
+		"ice_bomb",
+		"iron_golem",
+		"lightning_bolt",
+		"lingering_potion",
+		"llama",
+		"llama_spit",
+		"magma_cube",
+		"minecart",
+		"mooshroom",
+		"mule",
+		"ocelot",
+		"parrot",
+		"pig",
+		"player",
+		"polar_bear",
+		"pufferfish",
+		"rabbit",
+		"salmon",
+		"sheep",
+		"shulker",
+		"shulker_bullet",
+		"silverfish",
+		"skeleton",
+		"skeleton_horse",
+		"slime",
+		"small_fireball",
+		"snow_golem",
+		"snowball",
+		"spider",
+		"splash_potion",
+		"squid",
+		"stray",
+		"thrown_trident",
+		"tnt",
+		"tnt_minecart",
+		"tropicalfish",
+		"vex",
+		"villager",
+		"vindicator",
+		"witch",
+		"wither",
+		"wither_skeleton",
+		"wither_skull",
+		"wither_skull_dangerous",
+		"wolf",
+		"xp_bottle",
+		"zombie",
+		"zombie_horse",
+		"zombie_pigman",
+		"zombie_villager"
 	],
 	"loot_tables": [
 
@@ -16,13 +100,18 @@
 	"trades": [
 
 	],
+	"recipes": [
+
+	],
+
+	//RP
+	"models": [
+		"mobs.json"
+	],
 	"ui": [
 
 	],
 	"material": [
-
-	],
-	"recipes": [
 
 	],
 	"definitions": [
