@@ -78,7 +78,7 @@
 				"propose": [
 					{
 						"function": "$next_list_index",
-						"type": "number"
+						"type": "object"
 					}
 				]
 			},
