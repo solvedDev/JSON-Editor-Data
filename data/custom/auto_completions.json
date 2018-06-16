@@ -77,7 +77,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_file(minecraft:entity/component_groups)"
+						"function": "$parse_file_val(minecraft:entity/component_groups)"
 					}
 				]
 			}
