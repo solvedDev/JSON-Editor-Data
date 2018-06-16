@@ -49,7 +49,7 @@
 
 			//EVENTS
 			{
-				"recognize": "$is(events/.)",
+				"recognize": "$is_path(../events/.)",
 				"method": "replace",
 				"propose": [
 					{
@@ -74,7 +74,7 @@
 			},
 			{
 				"recognize": "$is_path(../events/././component_groups)",
-				"method": "append",
+				"method": "replace",
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/component_groups)"
