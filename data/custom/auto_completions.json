@@ -42,7 +42,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_file_val(minecraft:entity/events)",
+						"function": "$parse_file(minecraft:entity/events, string)",
 						"type": "string"
 					}
 				]
@@ -120,7 +120,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_file_val(minecraft:entity/component_groups)",
+						"function": "$parse_file(minecraft:entity/component_groups, string)",
 						"type": "string"
 					}
 				]
