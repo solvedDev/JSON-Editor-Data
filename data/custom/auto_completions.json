@@ -5,7 +5,7 @@
 		"extend": [
 			{
 				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
-				"type": "replace", //replace or append
+				"method": "replace", //replace or append
 				"propose": [ //What to propose
 					{
 						"function": "$getData(custom/entity_names.json)"
@@ -14,7 +14,7 @@
 			},
 			{
 				"recognize": "$is(minecraft:entity)",
-				"type": "append",
+				"method": "append",
 				"propose": [
 					{
 						"key": "do_not_upgrade",
@@ -24,7 +24,7 @@
 			},
 			{
 				"recognize": "($contains(event) and $is_not(event))",
-				"type": "replace",
+				"method": "replace",
 				"propose": [
 					{
 						"key": "event",
@@ -38,7 +38,7 @@
 			},
 			{
 				"recognize": "$is_type(event)",
-				"type": "append",
+				"method": "append",
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/events)"
@@ -47,7 +47,7 @@
 			},
 			{
 				"recognize": "$is_path(../add/component_groups)",
-				"type": "append",
+				"method": "append",
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/component_groups)"
@@ -62,7 +62,7 @@
 		"extend": [
 			{
 				"recognize": "$is(pools)",
-				"type": "replace",
+				"method": "replace",
 				"propose": [
 					{
 						"function": "$next_list_index"
@@ -71,7 +71,7 @@
 			},
 			{
 				"recognize": "$is_path(../pools/.)",
-				"type": "replace",
+				"method": "replace",
 				"propose": [
 					{
 						"key": "rolls",
@@ -85,7 +85,7 @@
 			},
 			{
 				"recognize": "$is(entries)",
-				"type": "replace",
+				"method": "replace",
 				"propose": [
 					{
 						"function": "$next_list_index"
@@ -94,7 +94,7 @@
 			},
 			{
 				"recognize": "$is_path(../entries/.)",
-				"type": "replace",
+				"method": "replace",
 				"propose": [
 					{
 						"key": "type",
