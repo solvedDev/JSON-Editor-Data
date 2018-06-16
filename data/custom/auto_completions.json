@@ -46,15 +46,6 @@
 					}
 				]
 			},
-			{
-				"recognize": "$is_path(../add/component_groups)",
-				"method": "append",
-				"propose": [
-					{
-						"function": "$parse_file(minecraft:entity/component_groups)"
-					}
-				]
-			},
 
 			//EVENTS
 			{
@@ -78,6 +69,15 @@
 					{
 						"key": "component_groups",
 						"type": "list"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../events/./component_groups)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$parse_file(minecraft:entity/component_groups)"
 					}
 				]
 			}
