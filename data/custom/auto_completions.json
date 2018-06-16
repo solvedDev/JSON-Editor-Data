@@ -77,7 +77,18 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_file_val(minecraft:entity/component_groups)"
+						"function": "$next_list_index",
+						"type": "number"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../events/././component_groups/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_file_val(minecraft:entity/component_groups)",
+						"type": "string"
 					}
 				]
 			}
