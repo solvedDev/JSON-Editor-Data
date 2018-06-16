@@ -54,7 +54,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_documentation(component_names)",
+						"function": "$parse_documentation(components, object, true)",
 						"type": "object"
 					}
 				]
