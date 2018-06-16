@@ -48,6 +48,28 @@
 				]
 			},
 
+			//COMPONENTS
+			{
+				"recognize": "($is_path(minecraft:entity/components) or is_path(minecraft:entity/component_groups/.))",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(component_names)"
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "($is_path(minecraft:entity/components/.) or is_path(minecraft:entity/component_groups/./.))",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$get_component_args"
+						"type": "object"
+					}
+				]
+			},
+
 			//EVENTS
 			{
 				"recognize": "$is_path(../events/.)",
