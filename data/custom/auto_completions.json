@@ -3,6 +3,7 @@
 		"define": "$is_path(minecraft:entity/..)", //Defines what an entity file is
 		"basic": "super.entity", //Links to var
 		"extend": [
+			//GENERAL
 			{
 				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
 				"method": "replace", //replace or append
@@ -23,7 +24,7 @@
 				]
 			},
 			{
-				"recognize": "($contains(event) and $is_not(event))",
+				"recognize": "($contains(event) and $is_not(event) and $is_not(events))",
 				"method": "replace",
 				"propose": [
 					{
@@ -51,6 +52,32 @@
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/component_groups)"
+					}
+				]
+			},
+
+			//EVENTS
+			{
+				"recognize": "$is(events)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "add",
+						"type": "object"
+					},
+					{
+						"key": "remove",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../events/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "component_groups",
+						"type": "list"
 					}
 				]
 			}
