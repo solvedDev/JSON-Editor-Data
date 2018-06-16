@@ -9,7 +9,7 @@
 				"method": "replace", //replace or append
 				"propose": [ //What to propose
 					{
-						"function": "$getData(custom/entity_names.json)"
+						"function": "$parse_documentation(entities, string)"
 					}
 				] 
 			},
