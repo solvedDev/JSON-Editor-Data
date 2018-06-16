@@ -72,6 +72,16 @@
 
 			//EVENTS
 			{
+				"recognize": "$is_path(../events)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(events, object, true)",
+						"type": "object"
+					}
+				]
+			},
+			{
 				"recognize": "$is_path(../events/.)",
 				"method": "replace",
 				"propose": [
