@@ -151,6 +151,38 @@
 					{
 						"key": "quality",
 						"type": "number"
+					},
+					{
+						"key": "functions",
+						"type": "list"
+					},
+					{
+						"key": "pools",
+						"type": "list"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../entries/functions)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../entries/functions/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "function",
+						"type": "string"
+					},
+					{
+						"key": "chance",
+						"type": "number"
 					}
 				]
 			}
