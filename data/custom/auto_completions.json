@@ -1,7 +1,7 @@
 {
 	"entity": {
 		"define": "$is_path(minecraft:entity/..)", //Defines what an entity file is
-		"basic": "super.entity", //Links to var
+		"basic": [ "vanilla.entities", "documentation.components" ], //Links to var
 		"extend": [
 			//GENERAL
 			{
@@ -97,7 +97,7 @@
 	},
 	"loot_table": {
 		"define": "$is_path(pools/..)",
-		"basic": "super.none",
+		"basic": [ "vanilla.loot_tables" ],
 		"extend": [
 			{
 				"recognize": "$is(pools)",
