@@ -29,20 +29,21 @@
 				"propose": [
 					{
 						"key": "event",
-						"type": "event"
+						"type": "object"
 					},
 					{
 						"key": "target",
-						"type": "subject"
+						"type": "object"
 					}
 				]
 			},
 			{
 				"recognize": "$is_type(event)",
-				"method": "append",
+				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_file(minecraft:entity/events)"
+						"function": "$parse_file_val(minecraft:entity/events)",
+						"string"
 					}
 				]
 			},
@@ -114,10 +115,14 @@
 				"propose": [
 					{
 						"key": "rolls",
-						"type": "number"
+						"type": "object"
 					},
 					{
 						"key": "entries",
+						"type": "list"
+					},
+					{
+						"key": "conditions",
 						"type": "list"
 					}
 				]
@@ -138,19 +143,19 @@
 				"propose": [
 					{
 						"key": "type",
-						"type": "string"
+						"type": "object"
 					},
 					{
 						"key": "name",
-						"type": "string"
+						"type": "object"
 					},
 					{
 						"key": "weight",
-						"type": "number"
+						"type": "object"
 					},
 					{
 						"key": "quality",
-						"type": "number"
+						"type": "object"
 					},
 					{
 						"key": "functions",
@@ -178,11 +183,11 @@
 				"propose": [
 					{
 						"key": "function",
-						"type": "string"
+						"type": "object"
 					},
 					{
 						"key": "chance",
-						"type": "number"
+						"type": "object"
 					}
 				]
 			}
