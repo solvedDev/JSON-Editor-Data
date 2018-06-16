@@ -1,7 +1,8 @@
 {
 	//HTML
 	"html": [
-		"editor_template.html"
+		"editor_template.html",
+		"documentation.html"
 	],
 	
 	//General
