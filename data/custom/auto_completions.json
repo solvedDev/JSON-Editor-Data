@@ -43,7 +43,7 @@
 				"propose": [
 					{
 						"function": "$parse_file_val(minecraft:entity/events)",
-						"string"
+						"type": "string"
 					}
 				]
 			},
