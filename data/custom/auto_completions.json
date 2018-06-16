@@ -54,7 +54,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_documentation(component_names)"
+						"function": "$parse_documentation(component_names)",
 						"type": "object"
 					}
 				]
@@ -64,7 +64,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$get_component_args"
+						"function": "$get_component_args",
 						"type": "object"
 					}
 				]
