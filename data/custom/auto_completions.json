@@ -103,7 +103,8 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$next_list_index"
+						"function": "$next_list_index",
+						"type": "object"
 					}
 				]
 			},
@@ -126,7 +127,8 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$next_list_index"
+						"function": "$next_list_index",
+						"type": "object"
 					}
 				]
 			},
