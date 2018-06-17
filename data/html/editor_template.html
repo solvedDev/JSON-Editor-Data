@@ -59,15 +59,13 @@
 
 	<!--   EDITBAR   -->
 	<div class="edit-bar" id="object">
-		<div class="section input-button inline-element">
+		<div class="section input-button inline-element" id="add-child-input">
 			<label for="add-child">Add child</label>
 			<button class="btn btn-outline-primary" id="add-child" title="Add child"><i class="fa fa-terminal"></i></button>
-			<input onClick="this.setSelectionRange(0, this.value.length)" id="child-input" list="auto-completions" name="value-field" class="section auto-suggestions">
 		</div>
-		<div class="section input-button inline-element">
+		<div class="section input-button inline-element" id="add-value-input">
 			<label for="add-value">Add value</label>
 			<button class="btn btn-outline-primary" id="add-value" title="Add value"><i class="fa fa-terminal"></i></button>
-			<input onClick="this.setSelectionRange(0, this.value.length)" id="value-input" list="value-auto-completions" name="value-field" class="section auto-suggestions">
 		</div>
 	</div>
 	<div class="edit-bar" id="array">
