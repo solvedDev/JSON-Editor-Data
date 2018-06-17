@@ -75,7 +75,7 @@
 				"propose": [
 					{
 						"function": "$get_component_values",
-						"type": "object"
+						"type": "value"
 					}
 				]
 			},
