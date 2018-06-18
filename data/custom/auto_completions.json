@@ -234,5 +234,101 @@
 				]
 			}
 		]
+	},
+	"trade": {
+		"define": "$is_path(tiers/..)",
+		"basic": [ "vanilla.trades" ],
+		"extend": [
+			{
+				"recognize": "$is(tiers)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../tiers/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "trades",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(trades)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../trades/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "wants",
+						"type": "object"
+					},
+					{
+						"key": "gives",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(wants) or $is(gives)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../wants/.) or $is_path(../gives/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "item",
+						"type": "object"
+					},
+					{
+						"key": "quantity",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(item)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(items, string)"
+					},
+					{
+						"function": "$parse_documentation(blocks, string)"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(quantity)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "0",
+						"type": "number"
+					}
+				] 
+			}
+		]
 	}
 }
