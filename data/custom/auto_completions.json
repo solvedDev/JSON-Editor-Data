@@ -9,7 +9,7 @@
 				"method": "replace", //replace or append
 				"propose": [ //What to propose
 					{
-						"function": "$parse_documentation(entities, string)"
+						"function": "$parse_documentation(entities, string, minecraft:)"
 					}
 				] 
 			},
@@ -54,7 +54,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_documentation(components, object, true)",
+						"function": "$parse_documentation(components, object, , true)", //The comma placement is not a bug; hands over empty string ""!
 						"type": "object"
 					}
 				]
@@ -312,10 +312,10 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_documentation(items, string)"
+						"function": "$parse_documentation(items, string, minecraft:)"
 					},
 					{
-						"function": "$parse_documentation(blocks, string)"
+						"function": "$parse_documentation(blocks, string, minecraft:)"
 					}
 				] 
 			},
