@@ -412,7 +412,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$as_chars(object)_on_$parse_file(pattern, object)",
+						"function": "$as_chars(object)_on_$parse_file(pattern, object, , false)",
 						"type": "object"
 					}
 				] 
