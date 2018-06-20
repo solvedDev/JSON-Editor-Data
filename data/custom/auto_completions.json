@@ -160,12 +160,34 @@
 						"type": "object"
 					},
 					{
+						"key": "tiers",
+						"type": "object"
+					},
+					{
 						"key": "entries",
 						"type": "list"
 					},
 					{
 						"key": "conditions",
 						"type": "list"
+					}
+				]
+			},
+			{
+				"recognize": "$is(tiers)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "initial_range",
+						"type": "object"
+					},
+					{
+						"key": "bonus_rolls",
+						"type": "object"
+					},
+					{
+						"key": "bonus_chance",
+						"type": "object"
 					}
 				]
 			},
@@ -242,6 +264,20 @@
 					},
 					{
 						"function": "$parse_documentation(blocks, string, minecraft:)"
+					}
+				]
+			},
+			{
+				"recognize": "$is(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "loot_table",
+						"type": "object"
+					},
+					{
+						"key": "item",
+						"type": "object"
 					}
 				]
 			}
