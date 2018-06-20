@@ -86,7 +86,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_documentation(events, object, true)",
+						"function": "$parse_documentation(events, object, , true)",  //The comma placement is not a bug; hands over empty string ""!
 						"type": "object"
 					}
 				]
