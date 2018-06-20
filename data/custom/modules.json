@@ -8,28 +8,87 @@
 	Other stuff: String combining ($var() oder "einfacher string"), "value": array oder object
 */
 {
-	"modules": [
-		{	
+	"regions": [
+		{
+			"name": "events",
 			"parse": [ "$get_dict(minecraft:entity/events)" ],
-			"define": "$is_path(../events/./add/effects)",
-
-			"modify": [
+			"modules": [
 				{
-					"path": "minecraft:entity/component_groups",
-					"method": "replace",
-					"value": {
-						"($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))": {
-							"minecraft:spell_effects": {
-								"add_effects": "$module"
+					"define": "$is_path(../events/./add/effects)",
+
+					"modify": [
+						{
+							"path": "minecraft:entity/component_groups",
+							"method": "replace",
+							"value": {
+								"($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))": {
+									"minecraft:spell_effects": {
+										"add_effects": "$module"
+									}
+								}
+							}
+						},
+						{
+							"path": "($module_path(1) + '/component_groups')",
+							"method": "append",
+							"value": [
+								"($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "components",
+			"parse": [ "$get_dict(minecraft:entity/components)", "$get_dict(minecraft:entity/component_groups)" ],
+			"modules": [
+				{
+					"define": "$is_path(../components/solved:npc) or $is_path(../component_groups/./solved:npc)",
+					"modify": [
+						{
+							"path": "minecraft:entity/components",
+							"method": "replace",
+							"value": {
+								"minecraft:interact": [
+									"..."
+								]
 							}
 						}
-					}
+					]
 				},
 				{
-					"path": "($module_path(1) + "/component_groups")",
-					"method": "append",
-					"value": [
-						"($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))"
+					"define": "$is_path(../components/solved:custom_item) or $is_path(../component_groups/./solved:custom_item)",
+					"modify": [
+						{
+							"path": "minecraft:entity/components",
+							"method": "replace",
+							"value": {
+								"minecraft:environment_sensor": [
+									"..."
+								]
+							}
+						},
+						{
+							"path": "minecraft:entity/events",
+							"method": "replace",
+							"value": {
+								"('on_holds_' + $var(name))": {
+									"add": {
+										"component_groups": [
+											"('holds_' + $var(name))"
+										]
+									}
+								}
+							}
+						},
+						{
+							"path": "minecraft:entity/component_groups",
+							"method": "replace",
+							"value": {
+								"('holds_' + $var(name))": "$module"
+							}
+						}
 					]
 				}
 			]
