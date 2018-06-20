@@ -273,11 +273,11 @@
 				"propose": [
 					{
 						"key": "loot_table",
-						"type": "object"
+						"type": "string"
 					},
 					{
 						"key": "item",
-						"type": "object"
+						"type": "string"
 					}
 				]
 			}
