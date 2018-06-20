@@ -232,6 +232,18 @@
 						"type": "object"
 					}
 				]
+			},
+			{
+				"recognize": "$is_path(../entries/./name) and $is(item)_on_$sibling_value(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(items, string, minecraft:)"
+					},
+					{
+						"function": "$parse_documentation(blocks, string, minecraft:)"
+					}
+				]
 			}
 		]
 	},
