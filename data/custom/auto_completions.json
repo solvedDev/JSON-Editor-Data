@@ -418,7 +418,7 @@
 				] 
 			},
 			{
-				"recognize": "$is(result)",
+				"recognize": "$is(result) or $is_path(key/.)",
 				"method": "replace",
 				"propose": [
 					{
