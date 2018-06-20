@@ -378,5 +378,88 @@
 				] 
 			}
 		]
+	},
+	"recipe": {
+		"define": "$contains(crafting)_on_$value",
+		"basic": [ "vanilla.recipe" ],
+		"extend": [
+			{
+				"recognize": "$is(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "crafting_shaped",
+						"type": "string"
+					},
+					{
+						"key": "crafting_shapeless",
+						"type": "string"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(pattern)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(key)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$as_char(object)_on_$parse_file(pattern, object)",
+						"type": "object"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(result)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "item",
+						"type": "object"
+					},
+					{
+						"key": "data",
+						"type": "object"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(item)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(items, string, minecraft:)"
+					},
+					{
+						"function": "$parse_documentation(blocks, string, minecraft:)"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(data)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "0",
+						"type": "number"
+					}
+				] 
+			}
+		]
+	},
+	"ui": {
+		"define": "$is(namespace) or $contains(@)",
+		"basic": [ "vanilla.ui" ],
+		"extend": [
+			
+		]
 	}
 }
