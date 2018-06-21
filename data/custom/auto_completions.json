@@ -384,6 +384,28 @@
 		"basic": [ "vanilla.recipe" ],
 		"extend": [
 			{
+				"recognize": "$is_root",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "type",
+						"type": "object"
+					},
+					{
+						"key": "pattern",
+						"type": "object"
+					},
+					{
+						"key": "key",
+						"type": "object"
+					},
+					{
+						"key": "result",
+						"type": "object"
+					}
+				]
+			},
+			{
 				"recognize": "$is(type)",
 				"method": "replace",
 				"propose": [
