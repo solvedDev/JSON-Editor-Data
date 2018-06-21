@@ -530,7 +530,7 @@
 		]
 	},
 	"ui": {
-		"define": "$is(namespace) or $contains(@)",
+		"define": "$has_child(type) or $is(namespace) or $contains(@)",
 		"basic": [ "vanilla.ui" ],
 		"extend": [
 			
