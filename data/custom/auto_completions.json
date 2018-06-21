@@ -454,6 +454,16 @@
 				] 
 			},
 			{
+				"recognize": "$is(result)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "count",
+						"type": "object"
+					}
+				] 
+			},
+			{
 				"recognize": "$is(item)",
 				"method": "replace",
 				"propose": [
@@ -471,6 +481,16 @@
 				"propose": [
 					{
 						"key": "0",
+						"type": "number"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(count)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "1",
 						"type": "number"
 					}
 				] 
