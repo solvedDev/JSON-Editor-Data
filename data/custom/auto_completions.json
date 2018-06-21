@@ -392,6 +392,10 @@
 						"type": "object"
 					},
 					{
+						"key": "group",
+						"type": "object"
+					},
+					{
 						"key": "result",
 						"type": "object"
 					}
@@ -440,7 +444,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$next_list_index",
+						"function": "$next_list_index(2)",
 						"type": "object"
 					}
 				] 
