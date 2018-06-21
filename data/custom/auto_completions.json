@@ -398,7 +398,7 @@
 				]
 			},
 			{
-				"recognize": "$is(crafting_shapeless)_on_$child_value(type)",
+				"recognize": "$is_root and $is(crafting_shapeless)_on_$child_value(type)",
 				"method": "replace",
 				"propose": [
 					{
@@ -408,7 +408,7 @@
 				] 
 			},
 			{
-				"recognize": "$is(crafting_shaped)_on_$child_value(type)",
+				"recognize": "$is_root and $is(crafting_shaped)_on_$child_value(type)",
 				"method": "replace",
 				"propose": [
 					{
