@@ -392,18 +392,34 @@
 						"type": "object"
 					},
 					{
+						"key": "result",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(crafting_shapeless)_on_$child_value(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "ingredients",
+						"type": "object"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(crafting_shaped)_on_$child_value(type)",
+				"method": "replace",
+				"propose": [
+					{
 						"key": "pattern",
 						"type": "object"
 					},
 					{
 						"key": "key",
 						"type": "object"
-					},
-					{
-						"key": "result",
-						"type": "object"
 					}
-				]
+				] 
 			},
 			{
 				"recognize": "$is(type)",
