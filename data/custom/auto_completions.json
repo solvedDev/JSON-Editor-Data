@@ -20,6 +20,18 @@
 					{
 						"key": "do_not_upgrade",
 						"type": "object"
+					},
+					{
+						"key": "component_groups",
+						"type": "object"
+					},
+					{
+						"key": "components",
+						"type": "object"
+					},
+					{
+						"key": "events",
+						"type": "object"
 					}
 				]
 			},
