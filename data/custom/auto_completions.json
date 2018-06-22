@@ -196,6 +196,16 @@
 						"type": "object"
 					}
 				]
+			},
+			{
+				"recognize": "$is_path(../any_of/./test) or $is_path(../all_of/./test) or $is_path(../filters/test)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(filter_names, string, , false)",
+						"type": "string"
+					}
+				]
 			}
 		]
 	},
