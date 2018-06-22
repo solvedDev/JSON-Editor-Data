@@ -236,7 +236,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../any_of/./value) and $is(has_equipment)_on_$sibling_value(test)",
+				"recognize": "$is_path(../filters/..) and $is(value) and $is(has_equipment)_on_$sibling_value(test)",
 				"method": "replace",
 				"propose": [
 					{
