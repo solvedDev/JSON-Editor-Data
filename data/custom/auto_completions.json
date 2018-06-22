@@ -582,7 +582,7 @@
 		"basic": [ "vanilla.ui" ],
 		"extend": [
 			{
-				"recognize": "$is_path(.) or $is_path(../controls/.)",
+				"recognize": "$is_path(.) or $is_path(../controls/.) and $contains_not(@)",
 				"method": "replace",
 				"propose": [
 					{
