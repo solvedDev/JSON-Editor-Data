@@ -176,7 +176,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/events/..) and $is_path(component_groups/.)",
+				"recognize": "$is_path(minecraft:entity/events/..) and $is_path(../component_groups/.)",
 				"method": "replace",
 				"propose": [
 					{
