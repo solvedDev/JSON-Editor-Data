@@ -104,7 +104,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../events/.)",
+				"recognize": "$is_path(../events/.) or $is_path(../randomize/.) or $is_path(../sequence/.)",
 				"method": "replace",
 				"propose": [
 					{
@@ -114,21 +114,39 @@
 					{
 						"key": "remove",
 						"type": "object"
-					}
-				]
-			},
-			{
-				"recognize": "$is_path(../events/./.)",
-				"method": "replace",
-				"propose": [
+					},
 					{
-						"key": "component_groups",
+						"key": "sequence",
+						"type": "list"
+					},
+					{
+						"key": "randomize",
 						"type": "list"
 					}
 				]
 			},
 			{
-				"recognize": "$is_path(../events/././component_groups)",
+				"recognize": "$is_path(../sequence/.)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "filters",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../randomize/.)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "weight",
+						"type": "number"
+					}
+				]
+			},
+			{
+				"recognize": "$is(randomize) or $is(sequence)",
 				"method": "replace",
 				"propose": [
 					{
@@ -138,7 +156,27 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../events/././component_groups/.)",
+				"recognize": "$is(add) or $is(remove) and $is_path(minecraft:entity/events/..)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "component_groups",
+						"type": "list"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/..) and $is(component_groups)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/..) and $is_path(component_groups/.)",
 				"method": "replace",
 				"propose": [
 					{
