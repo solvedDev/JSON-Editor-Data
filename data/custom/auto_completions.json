@@ -172,7 +172,8 @@
 						"type": "list"
 					},
 					{
-						"function": "$parse_documentation(filter_basic, object, , true)"
+						"function": "$parse_documentation(filter_basic, object, , true)",
+						"type": "object"
 					}
 				]
 			},
@@ -191,7 +192,8 @@
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$parse_documentation(filter_basic, object, , true)"
+						"function": "$parse_documentation(filter_basic, object, , true)",
+						"type": "object"
 					}
 				]
 			}
