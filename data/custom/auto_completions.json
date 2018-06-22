@@ -146,6 +146,54 @@
 						"type": "string"
 					}
 				]
+			},
+
+			//FILTERS
+			{
+				"recognize": "$contains(on_) or $is_path(../sequence/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "filters",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(filters)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "any_of",
+						"type": "list"
+					},
+					{
+						"key": "all_of",
+						"type": "list"
+					},
+					{
+						"function": "$parse_documentation(filter_basic, object)"
+					}
+				]
+			},
+			{
+				"recognize": "$is(any_of) or $is(all_of)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../any_of/.) or $is_path(../all_of/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(filter_basic, object)"
+					}
+				]
 			}
 		]
 	},
