@@ -126,22 +126,12 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../sequence/.)",
-				"method": "append",
-				"propose": [
-					{
-						"key": "filters",
-						"type": "object"
-					}
-				]
-			},
-			{
 				"recognize": "$is_path(../randomize/.)",
 				"method": "append",
 				"propose": [
 					{
 						"key": "weight",
-						"type": "number"
+						"type": "object"
 					}
 				]
 			},
