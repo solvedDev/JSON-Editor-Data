@@ -533,7 +533,39 @@
 		"define": "$has_child(type) or $is(namespace) or $contains(@)",
 		"basic": [ "vanilla.ui" ],
 		"extend": [
-			
+			{
+				"recognize": "$is_path(.) or $is_path(../controls/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "type",
+						"type": "object"
+					}
+				] 
+			},
+
+			{
+				"recognize": "$is(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "image",
+						"type": "string"
+					},
+					{
+						"key": "stack_panel",
+						"type": "string"
+					},
+					{
+						"key": "panel",
+						"type": "string"
+					},
+					{
+						"key": "label",
+						"type": "string"
+					}
+				] 
+			}
 		]
 	}
 }
