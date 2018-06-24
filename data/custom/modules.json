@@ -5,7 +5,7 @@
 	 - $module_path(backSteps): The path of the module | backSteps: how many layers above you want to get (0 = direct path; 1= parent path, ...)
 	 - $var(var_name) returns the value of a var or undefined if not defined
 
-	Other stuff: String combining ($var() oder "einfacher string"), "value": array oder object
+	Other stuff: String combining ($var() or "simple string"), "value": array oder object
 */
 {
 	"entity": {
