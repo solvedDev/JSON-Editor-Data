@@ -706,7 +706,7 @@
 
 			//Image
 			{
-				"recognize": "$is(image)_on_$sibling_value(type)",
+				"recognize": "$is(image)_on_$child_value(type)",
 				"method": "replace",
 				"propose": [
 					{
@@ -721,7 +721,7 @@
 			},
 			//Text
 			{
-				"recognize": "$is(label)_on_$sibling_value(type)",
+				"recognize": "$is(label)_on_$child_value(type)",
 				"method": "replace",
 				"propose": [
 					{
@@ -780,7 +780,7 @@
 			},
 			//Panel/Stack panel
 			{
-				"recognize": "$is(panel)_on_$sibling_value(type) or $is(stack_panel)_on_$sibling_value(type)",
+				"recognize": "$is(panel)_on_$child_value(type) or $is(stack_panel)_on_$child_value(type)",
 				"method": "replace",
 				"propose": [
 					{
