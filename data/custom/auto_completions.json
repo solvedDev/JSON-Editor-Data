@@ -666,6 +666,24 @@
 					{
 						"key": "type",
 						"type": "object"
+					},
+					{
+						"key": "controls",
+						"type": "list"
+					},
+					{
+						"key": "bindings",
+						"type": "list"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(controls) or $is(bindings)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
 					}
 				] 
 			},
@@ -689,6 +707,107 @@
 					{
 						"key": "label",
 						"type": "string"
+					}
+				] 
+			},
+
+			//Image
+			{
+				"recognize": "$is(image)_on_$child_value(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "texture",
+						"type": "object"
+					},
+					{
+						"key": "color",
+						"type": "object"
+					}
+				] 
+			},
+			//Text
+			{
+				"recognize": "$is(label)_on_$child_value(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "color",
+						"type": "object"
+					},
+					{
+						"key": "font_size",
+						"type": "object"
+					},
+					{
+						"key": "shadow",
+						"type": "string"
+					},
+					{
+						"key": "text",
+						"type": "object"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(shadow)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "true",
+						"type": "boolean"
+					},
+					{
+						"key": "false",
+						"type": "boolean"
+					}
+				]
+			},
+			{
+				"recognize": "$is(font_size)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "small",
+						"type": "string"
+					},
+					{
+						"key": "medium",
+						"type": "string"
+					},
+					{
+						"key": "normal",
+						"type": "string"
+					},
+					{
+						"key": "large",
+						"type": "string"
+					}
+				]
+			},
+			//Panel/Stack panel
+			{
+				"recognize": "$is(panel)_on_$child_value(type) or $is(stack_panel)_on_$child_value(type)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "size",
+						"type": "object"
+					}
+				] 
+			},
+			//General: objects
+			{
+				"recognize": "$is_path(./.) or $is_path(../controls/./.)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "anchor_to",
+						"type": "object"
+					},
+					{
+						"key": "anchor_from",
+						"type": "object"
 					}
 				] 
 			}
