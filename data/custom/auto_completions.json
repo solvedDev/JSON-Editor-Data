@@ -660,7 +660,7 @@
 		"basic": [ "vanilla.ui" ],
 		"extend": [
 			{
-				"recognize": "$is_path(.) or $is_path(../controls/.) and $contains_not(@)",
+				"recognize": "$is_path(.) and $is_root_not or $is_path(../controls/.) and $contains_not(@)",
 				"method": "replace",
 				"propose": [
 					{
