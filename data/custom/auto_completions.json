@@ -733,7 +733,7 @@
 					},
 					{
 						"key": "shadow",
-						"type": "string"
+						"type": "object"
 					},
 					{
 						"key": "text",
