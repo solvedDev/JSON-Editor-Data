@@ -670,7 +670,7 @@
 				] 
 			},
 			{
-				"recognize": "$is(controls) or $is(bindings)",
+				"recognize": "$is(controls) or $is(bindings) or $is(button_mappings)",
 				"method": "replace",
 				"propose": [
 					{
@@ -680,6 +680,7 @@
 				] 
 			},
 
+			//Types
 			{
 				"recognize": "$is(type)",
 				"method": "replace",
@@ -808,8 +809,52 @@
 					{
 						"key": "bindings",
 						"type": "list"
+					},
+					{
+						"key": "button_mappings",
+						"type": "list"
 					}
 				] 
+			},
+
+			//Bindings
+			{
+				"recognize": "$is_path(../bindings/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "binding_name",
+						"type": "object"
+					},
+					{
+						"key": "binding_name_override",
+						"type": "object"
+					},
+					{
+						"key": "binding_type",
+						"type": "object"
+					},
+					{
+						"key": "binding_collection_name",
+						"type": "object"
+					},
+					{
+						"key": "resolve_sibling_scope",
+						"type": "object"
+					},
+					{
+						"key": "source_control_name",
+						"type": "object"
+					},
+					{
+						"key": "source_property_name",
+						"type": "object"
+					},
+					{
+						"key": "target_property_name",
+						"type": "object"
+					}
+				]
 			}
 		]
 	}
