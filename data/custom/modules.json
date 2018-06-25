@@ -32,7 +32,7 @@
 								]
 							},
 							{
-								"path": "($module_path(1) + '/component_groups')",
+								"path": "($module_path(1) + /component_groups)",
 								"method": "append",
 								"values": [
 									{
