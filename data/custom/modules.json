@@ -15,14 +15,16 @@
 				"modules": [
 					{
 						"define": "$is_path(../events/./add/effects)",
-
+						"vars": {
+							"uuid": "$small_uuid"
+						},
 						"modify": [
 							{
 								"path": "minecraft:entity/component_groups",
 								"method": "replace",
 								"values": [
 									{
-										"key": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))",
+										"key": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient) + $var(uuid))",
 										"template": {
 											"minecraft:spell_effects": {
 												"add_effects": "$module"
@@ -37,7 +39,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))"
+										"template": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient) + $var(uuid))"
 									}
 								]
 							}
