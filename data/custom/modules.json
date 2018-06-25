@@ -23,7 +23,7 @@
 								"values": [
 									{
 										"key": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))",
-										"value": {
+										"template": {
 											"minecraft:spell_effects": {
 												"add_effects": "$module"
 											}
@@ -37,7 +37,7 @@
 								"values": [
 									{
 										"key": "list",
-										"value": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))"
+										"template": "($var(name) + $var(amplifier) + $var(duration) + $var(visible) + $var(ambient))"
 									}
 								]
 							}
