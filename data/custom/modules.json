@@ -1,7 +1,6 @@
 /**
 	CUSTOM FUNCTIONS/VARS NEEDED: 
 	 - $module: get the found module
-	 - $get_dict(path):
 	 - $module_path(backSteps): The path of the module | backSteps: how many layers above you want to get (0 = direct path; 1= parent path, ...)
 	 - $var(var_name) returns the value of a var or undefined if not defined
 
@@ -12,7 +11,7 @@
 		"regions": [
 			{
 				"name": "events",
-				"parse": [ "$get_dict(minecraft:entity/events)" ],
+				"parse": [ "minecraft:entity/events" ],
 				"modules": [
 					{
 						"define": "$is_path(../events/./add/effects)",
@@ -42,7 +41,7 @@
 			},
 			{
 				"name": "components",
-				"parse": [ "$get_dict(minecraft:entity/components)", "$get_dict(minecraft:entity/component_groups)" ],
+				"parse": [ "minecraft:entity/components", "minecraft:entity/component_groups" ],
 				"modules": [
 					{
 						"define": "$is_path(../components/solved:npc) or $is_path(../component_groups/./solved:npc)",
