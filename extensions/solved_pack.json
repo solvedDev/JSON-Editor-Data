@@ -44,12 +44,12 @@
 			"solved:health_over_time": {
 				"healthPerHeal": {
 					"type": "Integer",
-					"default_value": "1 ",
+					"default_value": "1",
 					"description": "Amount of health to deal"
 				},
 				"timeBetweenHeal": {
 					"type": "Integer",
-					"default_value": "1 ",
+					"default_value": "1",
 					"description": "Time in seconds between health"
 				},
 				"__des__": "Applies defined amount of health to the entity at specified intervals"
