@@ -15,7 +15,7 @@
 				"modules": [
 					{
 						"define": "$is_path(../events/./add/effects)",
-						"foreach_index": true,
+						"foreach_index": false,
 						"vars": {
 							"uuid": "$small_uuid"
 						},
