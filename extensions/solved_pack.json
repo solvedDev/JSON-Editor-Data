@@ -6,7 +6,7 @@
 				"foreach_index": false, 
 				"modify": [
 					{
-						"path": "$module_path",
+						"path": "$module_path(1)",
 						"method": "replace",
 						"values": [
 							{
@@ -25,7 +25,7 @@
 				"foreach_index": false, 
 				"modify": [
 					{
-						"path": "$module_path",
+						"path": "$module_path(1)",
 						"method": "replace",
 						"values": [
 							{
