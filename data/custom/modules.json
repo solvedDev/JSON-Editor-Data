@@ -14,7 +14,7 @@
 				"parse": [ "minecraft:entity/events" ],
 				"modules": [
 					{
-						"define": "$is_path(../events/./add/effects)",
+						"define": "$is_path(../add/effects)",
 						"foreach_index": false,
 						"vars": {
 							"uuid": "$small_uuid"
@@ -47,7 +47,7 @@
 						]
 					},
 					{
-						"define": "$is_path(../events/./add/group)",
+						"define": "$is_path(../add/group)",
 						"foreach_index": false,
 						"modify": [
 							{
