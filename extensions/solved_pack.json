@@ -52,7 +52,7 @@
 					"default_value": "1",
 					"description": "Time in seconds between health"
 				},
-				"__des__": "Applies defined amount of health to the entity at specified intervals"
+				"__des__": "Applies defined amount of health to the entity at specified intervals. Uses minecraft:damage_over_time internally"
 			},
 			"solved:invulnerable": {
 				"__des__": "Sets that this entity is invulnerable. Uses minecraft:damage_sensor internally"

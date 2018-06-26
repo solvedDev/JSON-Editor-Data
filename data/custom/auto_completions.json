@@ -152,6 +152,14 @@
 					{
 						"key": "component_groups",
 						"type": "list"
+					},
+					{
+						"key": "effects",
+						"type": "list"
+					},
+					{
+						"key": "group",
+						"type": "list"
 					}
 				]
 			},
@@ -270,6 +278,58 @@
 					},
 					{
 						"function": "$parse_documentation(blocks, string)"
+					}
+				]
+			},
+
+			//CUSTOM
+			{
+				"recognize": "$is(group) and $is_path(../events/..)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "name",
+						"type": "object"
+					},
+					{
+						"key": "components",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$contains(effects) and $is_not(spell_effects) and $is_not(remove_effects)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../effects/.) or $is_path(../add_effects/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "name",
+						"type": "object"
+					},
+					{
+						"key": "duration",
+						"type": "object"
+					},
+					{
+						"key": "amplifier",
+						"type": "object"
+					},
+					{
+						"key": "visible",
+						"type": "object"
+					},
+					{
+						"key": "ambient",
+						"type": "object"
 					}
 				]
 			}
