@@ -1,0 +1,70 @@
+{
+	"components": {
+		"definitions": [
+			{
+				"define": "$is_path(../solved:health_over_time)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:damage_over_time",
+								"template": {
+									"damagePerHurt": "(- + $var(healthPerHeal))",
+									"timeBetweenHurt": "$var(timeBetweenHeal)"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"define": "$is_path(../solved:invulnerable)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:damage_sensor",
+								"template": {
+									"cause": "any",
+									"deals_damage": false
+								}
+							}
+						]
+					}
+				]
+			}
+		],
+		"descriptions": {
+			"solved:health_over_time": {
+				"healthPerHeal": {
+					"type": "Integer",
+					"default_value": 1,
+					"description": "Amount of health to deal"
+				},
+				"timeBetweenHeal": {
+					"type": "Integer",
+					"default_value": 1,
+					"description": "Time in seconds between health"
+				},
+				"__des__": "Applies defined amount of health to the entity at specified intervals"
+			},
+			"solved:invulnerable": {
+				"__des__": "Sets that this entity is invulnerable. Uses minecraft:damage_sensor internally"
+			}
+		}
+	},
+	"other": {
+		"modules": [
+
+		],
+		"auto_completions": [
+
+		]
+	}
+}
