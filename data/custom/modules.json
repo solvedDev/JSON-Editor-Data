@@ -1,11 +1,3 @@
-/**
-	CUSTOM FUNCTIONS/VARS NEEDED: 
-	 - $module: get the found module
-	 - $module_path(backSteps): The path of the module | backSteps: how many layers above you want to get (0 = direct path; 1= parent path, ...)
-	 - $var(var_name) returns the value of a var or undefined if not defined
-
-	Other stuff: String combining ($var() or "simple string"), "value": array oder object
-*/
 {
 	"entity": {
 		"regions": [
@@ -15,7 +7,7 @@
 				"modules": [
 					{
 						"define": "$is_path(../add/effects)",
-						"foreach_index": false,
+						"foreach_index": false, 
 						"vars": {
 							"uuid": "$small_uuid"
 						},
@@ -55,7 +47,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "$var(group_name)",
+										"key": "$var(name)",
 										"template": "$module(components)"
 									}
 								]
@@ -67,6 +59,31 @@
 									{
 										"key": "list",
 										"template": "$var(group_name)"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "components",
+				"parse": [ "minecraft:entity/components", "minecraft:entity/component_groups" ],
+				"modules": [
+					{
+						"define": "$is_path(../solved:health_over_time)",
+						"foreach_index": false, 
+						"modify": [
+							{
+								"path": "$module_path",
+								"method": "append",
+								"values": [
+									{
+										"key": "minecraft:damage_over_time",
+										"template": {
+											"damagePerHurt": "$var(healthPerHeal)",
+											"timeBetweenHurt": "$var(timeBetweenHeal)"
+										}
 									}
 								]
 							}
