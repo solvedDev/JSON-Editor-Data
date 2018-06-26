@@ -81,7 +81,7 @@
 									{
 										"key": "minecraft:damage_over_time",
 										"template": {
-											"damagePerHurt": "$var(healthPerHeal)",
+											"damagePerHurt": "- + $var(healthPerHeal)",
 											"timeBetweenHurt": "$var(timeBetweenHeal)"
 										}
 									}
