@@ -72,7 +72,7 @@
 				]
 			},
 			{
-				"recognize": "($is_path(minecraft:entity/components/.) or $is_path(minecraft:entity/component_groups/./.))",
+				"recognize": "($is_path(../components/.) or $is_path(minecraft:entity/component_groups/./.))",
 				"method": "replace",
 				"propose": [
 					{
@@ -82,7 +82,7 @@
 				]
 			},
 			{
-				"recognize": "($is_path(minecraft:entity/components/./.) or $is_path(minecraft:entity/component_groups/././.))",
+				"recognize": "($is_path(../components/./.) or $is_path(minecraft:entity/component_groups/././.))",
 				"method": "replace",
 				"propose": [
 					{
