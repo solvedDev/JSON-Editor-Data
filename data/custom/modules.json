@@ -65,6 +65,13 @@
 						]
 					}
 				]
+			},
+			{
+				"name": "components",
+				"parse": [ "minecraft:entity/components", "minecraft:entity/component_groups" ],
+				"modules": [
+					
+				]
 			}
 		]
 	}
