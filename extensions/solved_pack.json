@@ -32,7 +32,7 @@
 								"key": "minecraft:damage_sensor",
 								"template": {
 									"cause": "any",
-									"deals_damage": false
+									"deals_damage": "false"
 								}
 							}
 						]
@@ -45,7 +45,7 @@
 				"healthPerHeal": {
 					"type": "Integer",
 					"default_value": "1",
-					"description": "Amount of health to deal"
+					"description": "Amount of health to heal"
 				},
 				"timeBetweenHeal": {
 					"type": "Integer",
