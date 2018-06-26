@@ -58,32 +58,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "$var(group_name)"
-									}
-								]
-							}
-						]
-					}
-				]
-			},
-			{
-				"name": "components",
-				"parse": [ "minecraft:entity/components", "minecraft:entity/component_groups" ],
-				"modules": [
-					{
-						"define": "$is_path(../solved:health_over_time)",
-						"foreach_index": false, 
-						"modify": [
-							{
-								"path": "$module_path",
-								"method": "replace",
-								"values": [
-									{
-										"key": "minecraft:damage_over_time",
-										"template": {
-											"damagePerHurt": "(- + $var(healthPerHeal))",
-											"timeBetweenHurt": "$var(timeBetweenHeal)"
-										}
+										"template": "$var(name)"
 									}
 								]
 							}
