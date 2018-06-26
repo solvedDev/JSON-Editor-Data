@@ -59,9 +59,7 @@
 								"values": [
 									{
 										"key": "$var(uuid)",
-										"template": [
-											"$module"
-										]
+										"template": "$module"
 									}
 								]
 							},
