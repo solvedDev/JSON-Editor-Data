@@ -47,19 +47,16 @@
 						]
 					},
 					{
-						"define": "$is_path(../events/./add/components)",
+						"define": "$is_path(../events/./add/group)",
 						"foreach_index": false,
-						"vars": {
-							"uuid": "$uuid"
-						},
 						"modify": [
 							{
 								"path": "minecraft:entity/component_groups",
 								"method": "replace",
 								"values": [
 									{
-										"key": "$var(uuid)",
-										"template": "$module"
+										"key": "$var(group_name)",
+										"template": "$module(components)"
 									}
 								]
 							},
@@ -69,7 +66,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "$var(uuid)"
+										"template": "$var(group_name)"
 									}
 								]
 							}
