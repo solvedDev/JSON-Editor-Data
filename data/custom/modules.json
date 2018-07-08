@@ -90,7 +90,7 @@
 											"minecraft:spawn_entity": {
 												"max_wait_time": "0",
 												"min_wait_time": "0",
-												"spawn_entity": "$var(entity)",
+												"spawn_entity": "$var(value)",
 												"spawn_sound": "x"
 											}
 										}
@@ -151,8 +151,8 @@
 											"minecraft:spawn_entity": {
 												"max_wait_time": "0",
 												"min_wait_time": "0",
-												"spawn_item": "$var(item)",
-												"spawn_sound": "x"
+												"spawn_item": "$var(value)",
+												"spawn_sound": "plop"
 											}
 										}
 									}
