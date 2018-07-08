@@ -74,6 +74,73 @@
 						]
 					}
 				]
+			},
+			{
+				"define": "$is_path(../gm1:silent_kill)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:explode",
+								"template": {
+									"power": "0",
+									"fuseLit": "true",
+									"fuseLength": "0"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"define": "$is_path(../gm1:loot_kill)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:health",
+								"template": {
+									"value": "-1"
+								}
+							},
+							{
+								"key": "minecraft:scale",
+								"template": {
+									"value": "0"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"define": "$is_path(../gm1:spawn_items)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:ageable",
+								"template": {
+									"duration": "$var(time)",
+									"drop_items": "$var(items)",
+									"grow_up": {
+										"event": "$var(event)",
+										"target": "self"
+									}
+								}
+							}
+						]
+					}
+				]
 			}
 		],
 		"descriptions": {
@@ -95,6 +162,30 @@
 			},
 			"gm1:invisible": {
 				"__des__": "Sets that this entity is invisible. Uses minecraft:scale internally"
+			},
+			"gm1:loot_kill": {
+				"__des__": "This component kills the entity once you add it. Uses minecraft:health & minecraft:scale internally"
+			},
+			"gm1:silent_kill": {
+				"__des__": "This component kills the entity without playing sounds, displaying particles or dropping loot once you add it. Uses minecraft:explode internally"
+			},
+			"gm1:spawn_items": {
+				"time": {
+					"type": "Integer",
+					"default_value": "0",
+					"description": "Time it takes until the defined items spawn"
+				},
+				"items": {
+					"type": "List",
+					"default_value": "0",
+					"description": "List of items to spawn"
+				},
+				"event": {
+					"type": "String",
+					"default_value": "0",
+					"description": "Event to call once the items are spawned"
+				},
+				"__des__": "Spawns multiple items after the specified amount of time. Uses minecraft:ageable internally"
 			},
 			"gm1:visible": {
 				"__des__": "Sets that this entity is visible. Uses minecraft:scale internally"
