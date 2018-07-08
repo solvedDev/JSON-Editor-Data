@@ -5,7 +5,7 @@
 		"extend": [
 			//GENERAL
 			{
-				"recognize": "($is(id) or $is(entity) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
+				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
 				"method": "replace", //replace or append
 				"propose": [ //What to propose
 					{
@@ -126,16 +126,6 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/events/.)",
-				"method": "append",
-				"propose": [
-					{
-						"key": "spawn",
-						"type": "object"
-					}
-				]
-			},
-			{
 				"recognize": "$is_path(../randomize/.)",
 				"method": "append",
 				"propose": [
@@ -193,20 +183,7 @@
 					}
 				]
 			},
-			{
-				"recognize": "$is_path(minecraft:entity/events/./spawn)",
-				"method": "replace",
-				"propose": [
-					{
-						"key": "entity",
-						"type": "object"
-					},
-					{
-						"key": "item",
-						"type": "object"
-					}
-				]
-			},
+			
 
 			//FILTERS
 			{
@@ -294,7 +271,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../filters/..) and $is(value) and $is(has_equipment)_on_$sibling_value(test) or $is(item)",
+				"recognize": "$is_path(../filters/..) and $is(value) and $is(has_equipment)_on_$sibling_value(test)",
 				"method": "replace",
 				"propose": [
 					{
@@ -307,6 +284,61 @@
 			},
 
 			//CUSTOM
+			{
+				"recognize": "$is_path(minecraft:entity/events/.)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "spawn",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/./spawn)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "entity",
+						"type": "object"
+					},
+					{
+						"key": "item",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../events/./spawn/entity) or $is_path(../events/./spawn/item)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "value",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../events/./spawn/entity/value)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(entities, string, minecraft:)"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../events/./spawn/item/value)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(items, string)"
+					},
+					{
+						"function": "$parse_documentation(blocks, string)"
+					}
+				]
+			},
 			{
 				"recognize": "$is(group) and $is_path(../events/..)",
 				"method": "replace",
