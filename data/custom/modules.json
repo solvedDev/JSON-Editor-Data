@@ -122,6 +122,16 @@
 										}
 									}
 								]
+							},
+							{
+								"path": "$module_path(2)",
+								"method": "replace",
+								"values": [
+									{
+										"key": "spawn",
+										"template": "undefined"
+									}
+								]
 							}
 						]
 					},
@@ -181,6 +191,16 @@
 												]
 											}
 										}
+									}
+								]
+							},
+							{
+								"path": "$module_path(2)",
+								"method": "replace",
+								"values": [
+									{
+										"key": "spawn",
+										"template": "undefined"
 									}
 								]
 							}
