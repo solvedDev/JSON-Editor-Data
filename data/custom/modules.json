@@ -79,17 +79,17 @@
 										"key": "$var(uuid)",
 										"template": {
 											"minecraft:timer": {
-												"looping": false,
-												"randomInterval": false,
-												"time": 0.0,
+												"looping": "false",
+												"randomInterval": "false",
+												"time": "0.0",
 												"time_down_event": {
 													"event": "(remove_ + $var(uuid))",
 													"target": "self"
 												}
 											},
 											"minecraft:spawn_entity": {
-												"max_wait_time": 0,
-												"min_wait_time": 0,
+												"max_wait_time": "0",
+												"min_wait_time": "0",
 												"spawn_entity": "$var(entity)",
 												"spawn_sound": "x"
 											}
@@ -140,8 +140,8 @@
 										"key": "$var(uuid)",
 										"template": {
 											"minecraft:timer": {
-												"looping": false,
-												"randomInterval": false,
+												"looping": "false",
+												"randomInterval": "false",
 												"time": 0.0,
 												"time_down_event": {
 													"event": "(remove_ + $var(uuid))",
@@ -149,8 +149,8 @@
 												}
 											},
 											"minecraft:spawn_entity": {
-												"max_wait_time": 0,
-												"min_wait_time": 0,
+												"max_wait_time": "0",
+												"min_wait_time": "0",
 												"spawn_item": "$var(item)",
 												"spawn_sound": "x"
 											}
