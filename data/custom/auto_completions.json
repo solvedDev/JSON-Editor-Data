@@ -199,11 +199,11 @@
 				"propose": [
 					{
 						"key": "entity",
-						"type": "string"
+						"type": "object"
 					},
 					{
 						"key": "item",
-						"type": "string"
+						"type": "object"
 					}
 				]
 			},
