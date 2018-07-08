@@ -50,7 +50,7 @@
 							{
 								"key": "minecraft:scale",
 								"template": {
-									"value": 0.0
+									"value": "0.0"
 								}
 							}
 						]
@@ -68,7 +68,7 @@
 							{
 								"key": "minecraft:scale",
 								"template": {
-									"value": 1.0
+									"value": "1.0"
 								}
 							}
 						]
