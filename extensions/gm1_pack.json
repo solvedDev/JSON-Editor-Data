@@ -1,0 +1,112 @@
+{
+	"components": {
+		"definitions": [
+			{
+				"define": "$is_path(../gm1:health_over_time)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:damage_over_time",
+								"template": {
+									"damagePerHurt": "(- + $var(healthPerHeal))",
+									"timeBetweenHurt": "$var(timeBetweenHeal)"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"define": "$is_path(../gm1:invulnerable)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:damage_sensor",
+								"template": {
+									"cause": "any",
+									"deals_damage": "false"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"define": "$is_path(../gm1:invisible)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:scale",
+								"template": {
+									"value": 0.0
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"define": "$is_path(../gm1:visible)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:scale",
+								"template": {
+									"value": 1.0
+								}
+							}
+						]
+					}
+				]
+			}
+		],
+		"descriptions": {
+			"gm1:health_over_time": {
+				"healthPerHeal": {
+					"type": "Integer",
+					"default_value": "1",
+					"description": "Amount of health to heal"
+				},
+				"timeBetweenHeal": {
+					"type": "Integer",
+					"default_value": "1",
+					"description": "Time in seconds between health"
+				},
+				"__des__": "Applies defined amount of health to the entity at specified intervals. Uses minecraft:damage_over_time internally"
+			},
+			"gm1:invulnerable": {
+				"__des__": "Sets that this entity is invulnerable. Uses minecraft:damage_sensor internally"
+			},
+			"gm1:invisible": {
+				"__des__": "Sets that this entity is invisible. Uses minecraft:scale internally"
+			},
+			"gm1:visible": {
+				"__des__": "Sets that this entity is visible. Uses minecraft:scale internally"
+			}
+		}
+	},
+	"other": {
+		"modules": [
+
+		],
+		"auto_completions": [
+
+		]
+	}
+}
