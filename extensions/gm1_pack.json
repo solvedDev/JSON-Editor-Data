@@ -88,7 +88,7 @@
 								"template": {
 									"power": "0",
 									"fuseLit": "true",
-									"fuseLength": "0"
+									"fuseLength": "$var(kill_time)"
 								}
 							}
 						]
@@ -167,6 +167,11 @@
 				"__des__": "This component kills the entity once you add it. Uses minecraft:health & minecraft:scale internally"
 			},
 			"gm1:silent_kill": {
+				"time": {
+					"type": "Integer",
+					"default_value": "0",
+					"description": "Time it takes until the entity gets killed"
+				},
 				"__des__": "This component kills the entity without playing sounds, displaying particles or dropping loot once you add it. Uses minecraft:explode internally"
 			},
 			"gm1:spawn_items": {
@@ -182,7 +187,7 @@
 				},
 				"event": {
 					"type": "String",
-					"default_value": "0",
+					"default_value": "",
 					"description": "Event to call once the items are spawned"
 				},
 				"__des__": "Spawns multiple items after the specified amount of time. Uses minecraft:ageable internally"
