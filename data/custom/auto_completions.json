@@ -116,12 +116,26 @@
 						"type": "object"
 					},
 					{
+						"key": "spawn",
+						"type": "object"
+					},
+					{
 						"key": "sequence",
 						"type": "list"
 					},
 					{
 						"key": "randomize",
 						"type": "list"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/.)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "spawn",
+						"type": "object"
 					}
 				]
 			},
@@ -179,6 +193,20 @@
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/component_groups, string)",
+						"type": "string"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/./spawn)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "entity",
+						"type": "string"
+					},
+					{
+						"function": "item",
 						"type": "string"
 					}
 				]
