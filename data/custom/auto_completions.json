@@ -5,7 +5,7 @@
 		"extend": [
 			//GENERAL
 			{
-				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
+				"recognize": "($is(id) or $is(entity) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
 				"method": "replace", //replace or append
 				"propose": [ //What to propose
 					{
@@ -294,7 +294,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../filters/..) and $is(value) and $is(has_equipment)_on_$sibling_value(test)",
+				"recognize": "$is_path(../filters/..) and $is(value) and $is(has_equipment)_on_$sibling_value(test) or $is(item)",
 				"method": "replace",
 				"propose": [
 					{
