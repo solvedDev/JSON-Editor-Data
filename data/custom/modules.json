@@ -65,7 +65,7 @@
 						]
 					},
 					{
-						"define": "$is_path(..events/./spawn)",
+						"define": "$is_path(../events/./spawn)",
 						"foreach_index": false,
 						"vars": {
 							"uuid": "$uuid"
