@@ -92,7 +92,7 @@
 												"min_wait_time": 0,
 												"spawn_entity": "$var(entity)",
 												"spawn_item": "$var(item)",
-												"spawn_sound": ""
+												"spawn_sound": "x"
 											}
 										}
 									}
