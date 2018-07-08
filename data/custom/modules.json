@@ -65,7 +65,7 @@
 						]
 					},
 					{
-						"define": "$is_path(../events/./spawn)",
+						"define": "$is_path(../events/./spawn/entity)",
 						"foreach_index": false,
 						"vars": {
 							"uuid": "$uuid"
@@ -91,6 +91,66 @@
 												"max_wait_time": 0,
 												"min_wait_time": 0,
 												"spawn_entity": "$var(entity)",
+												"spawn_sound": "x"
+											}
+										}
+									}
+								]
+							},
+							{
+								"path": "($module_path(2) + /add/component_groups)",
+								"method": "append",
+								"values": [
+									{
+										"key": "list",
+										"template": "$var(uuid)"
+									}
+								]
+							},
+							{
+								"path": "minecraft:entity/events",
+								"method": "replace",
+								"values": [
+									{
+										"key": "(remove_ + $var(uuid))",
+										"template": {
+											"remove": {
+												"component_groups": [
+													"$var(uuid)"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					{
+						"define": "$is_path(../events/./spawn/item)",
+						"foreach_index": false,
+						"vars": {
+							"uuid": "$uuid"
+						},
+						"modify": [
+							{
+								"path": "minecraft:entity/component_groups",
+								"method": "replace",
+								"values": [
+									{
+										"key": "$var(uuid)",
+										"template": {
+											"minecraft:timer": {
+												"looping": false,
+												"randomInterval": false,
+												"time": 0.0,
+												"time_down_event": {
+													"event": "(remove_ + $var(uuid))",
+													"target": "self"
+												}
+											},
+											"minecraft:spawn_entity": {
+												"max_wait_time": 0,
+												"min_wait_time": 0,
 												"spawn_item": "$var(item)",
 												"spawn_sound": "x"
 											}
@@ -99,7 +159,7 @@
 								]
 							},
 							{
-								"path": "($module_path(1) + /add/component_groups)",
+								"path": "($module_path(2) + /add/component_groups)",
 								"method": "append",
 								"values": [
 									{
