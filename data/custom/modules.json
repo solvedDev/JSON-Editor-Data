@@ -254,7 +254,7 @@
 								]
 							},
 							{
-								"path": "($module_path(2) + /add/component_groups)",
+								"path": "($module_path(1) + /add/component_groups)",
 								"method": "append",
 								"values": [
 									{
