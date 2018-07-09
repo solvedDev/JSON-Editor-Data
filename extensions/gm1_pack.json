@@ -78,6 +78,9 @@
 			{
 				"define": "$is_path(../gm1:silent_kill)",
 				"foreach_index": false, 
+				"vars": {
+					"kill_time": "0"
+				},
 				"modify": [
 					{
 						"path": "$module_path(1)",
@@ -198,7 +201,7 @@
 			},
 			"gm1:spawn_items": {
 				"time": {
-					"type": "Integer",
+					"type": "Decimal",
 					"default_value": "0",
 					"description": "Time it takes until the defined items spawn"
 				},
@@ -216,8 +219,8 @@
 			},
 			"gm1:timer2": {
 				"time": {
-					"type": "Integer",
-					"default_value": "0",
+					"type": "Decimal",
+					"default_value": "0.0",
 					"description": "Time until the event fires"
 				},
 				"event": {
