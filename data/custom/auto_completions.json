@@ -400,7 +400,7 @@
 				"method": "replace",
 				"propose": [
 					{
-						"key": "name",
+						"key": "effect",
 						"type": "object"
 					},
 					{
