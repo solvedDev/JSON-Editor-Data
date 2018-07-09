@@ -68,7 +68,7 @@
 						"define": "$is_path(../events/./spawn/entity)",
 						"foreach_index": false,
 						"vars": {
-							"name": "(spawn_ + $var(value))"
+							"@name": "(spawn_ + $var(value))"
 						},
 						"modify": [
 							{
@@ -139,7 +139,7 @@
 						"define": "$is_path(../events/./spawn/item)",
 						"foreach_index": false,
 						"vars": {
-							"name": "(spawn_ + $var(value))"
+							"@name": "(spawn_ + $var(value))"
 						},
 						"modify": [
 							{
@@ -210,7 +210,7 @@
 						"define": "$is_path(../events/./redirect)",
 						"foreach_index": false,
 						"vars": {
-							"name": "(send_ + $var(event) + _ + $small_uuid )",
+							"@name": "(send_ + $var(event) + _ + $small_uuid )",
 							"range": "16"
 						},
 						"modify": [
