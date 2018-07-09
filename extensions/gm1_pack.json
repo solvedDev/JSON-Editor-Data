@@ -3,7 +3,11 @@
 		"definitions": [
 			{
 				"define": "$is_path(../gm1:health_over_time)",
-				"foreach_index": false, 
+				"foreach_index": false,
+				"vars": {
+					"healthPerHeal": "1",
+					"timeBetweenHeal": "1"
+				}
 				"modify": [
 					{
 						"path": "$module_path(1)",
@@ -124,7 +128,10 @@
 			},
 			{
 				"define": "$is_path(../gm1:spawn_items)",
-				"foreach_index": false, 
+				"foreach_index": false,
+				"vars": {
+					"time": "0"
+				},
 				"modify": [
 					{
 						"path": "$module_path(1)",
@@ -148,6 +155,9 @@
 			{
 				"define": "$is_path(../gm1:timer2)",
 				"foreach_index": false, 
+				"vars": {
+					"time": "0.0"
+				},
 				"modify": [
 					{
 						"path": "$module_path(1)",
@@ -207,7 +217,7 @@
 				},
 				"items": {
 					"type": "List",
-					"default_value": "0",
+					"default_value": "",
 					"description": "List of items to spawn"
 				},
 				"event": {
