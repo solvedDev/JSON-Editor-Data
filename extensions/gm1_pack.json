@@ -141,6 +141,28 @@
 						]
 					}
 				]
+			},
+			{
+				"define": "$is_path(../gm1:timer2)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:ageable",
+								"template": {
+									"duration": "$var(time)",
+									"grow_up": {
+										"event": "$var(event)",
+										"target": "self"
+									}
+								}
+							}
+						]
+					}
+				]
 			}
 		],
 		"descriptions": {
@@ -191,6 +213,19 @@
 					"description": "Event to call once the items are spawned"
 				},
 				"__des__": "Spawns multiple items after the specified amount of time. Uses minecraft:ageable internally"
+			},
+			"gm1:timer2": {
+				"time": {
+					"type": "Integer",
+					"default_value": "0",
+					"description": "Time until the event fires"
+				},
+				"event": {
+					"type": "String",
+					"default_value": "",
+					"description": "Event to call once the time runs out"
+				},
+				"__des__": "A timer which can run parallel to minecraft:timer. Uses minecraft:ageable internally"
 			},
 			"gm1:visible": {
 				"__des__": "Sets that this entity is visible. Uses minecraft:scale internally"
