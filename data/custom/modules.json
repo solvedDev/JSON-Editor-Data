@@ -17,7 +17,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "($var(0/name) + $var(0/amplifier) + $var(0/duration) + $var(0/visible) + $var(0/ambient) + $var(uuid))",
+										"key": "($var(0/effect) + $var(0/amplifier) + $var(0/duration) + $var(0/visible) + $var(0/ambient) + $var(uuid))",
 										"template": {
 											"minecraft:spell_effects": {
 												"add_effects": "$module"
@@ -32,7 +32,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "($var(0/name) + $var(0/amplifier) + $var(0/duration) + $var(0/visible) + $var(0/ambient) + $var(uuid))"
+										"template": "($var(0/effect) + $var(0/amplifier) + $var(0/duration) + $var(0/visible) + $var(0/ambient) + $var(uuid))"
 									}
 								]
 							}
@@ -68,7 +68,7 @@
 						"define": "$is_path(../events/./spawn/entity)",
 						"foreach_index": false,
 						"vars": {
-							"uuid": "$uuid"
+							"name": "(spawn_ + $var(value))"
 						},
 						"modify": [
 							{
@@ -76,14 +76,14 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "$var(uuid)",
+										"key": "(gm1: + $var(name))",
 										"template": {
 											"minecraft:timer": {
 												"looping": "false",
 												"randomInterval": "false",
 												"time": "0.0",
 												"time_down_event": {
-													"event": "(remove_ + $var(uuid))",
+													"event": "(gm1:remove_ + $var(name))",
 													"target": "self"
 												}
 											},
@@ -103,7 +103,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "$var(uuid)"
+										"template": "(gm1: + $var(name))"
 									}
 								]
 							},
@@ -112,11 +112,11 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "(remove_ + $var(uuid))",
+										"key": "(gm1:remove_ + $var(name))",
 										"template": {
 											"remove": {
 												"component_groups": [
-													"$var(uuid)"
+													"(gm1: + $var(name))"
 												]
 											}
 										}
@@ -139,7 +139,7 @@
 						"define": "$is_path(../events/./spawn/item)",
 						"foreach_index": false,
 						"vars": {
-							"uuid": "$uuid"
+							"name": "(spawn_ + $var(value))"
 						},
 						"modify": [
 							{
@@ -147,14 +147,14 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "$var(uuid)",
+										"key": "(gm1: + $var(name))",
 										"template": {
 											"minecraft:timer": {
 												"looping": "false",
 												"randomInterval": "false",
 												"time": 0.0,
 												"time_down_event": {
-													"event": "(remove_ + $var(uuid))",
+													"event": "(gm1:remove_ + $var(name))",
 													"target": "self"
 												}
 											},
@@ -174,7 +174,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "$var(uuid)"
+										"template": "(gm1: + $var(name))"
 									}
 								]
 							},
@@ -183,11 +183,11 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "(remove_ + $var(uuid))",
+										"key": "(gm1:remove_ + $var(name))",
 										"template": {
 											"remove": {
 												"component_groups": [
-													"$var(uuid)"
+													"(gm1: + $var(name))"
 												]
 											}
 										}
@@ -210,7 +210,7 @@
 						"define": "$is_path(../events/./redirect)",
 						"foreach_index": false,
 						"vars": {
-							"uuid": "$uuid",
+							"name": "(send_ + $var(event) + _ + $small_uuid )",
 							"range": "16"
 						},
 						"modify": [
@@ -219,7 +219,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "$var(uuid)",
+										"key": "(gm1: + $var(name))",
 										"template": {
 											"minecraft:behavior.send_event": {
 												"priority": "0",
@@ -245,7 +245,7 @@
 												"looping": "false",
 												"time": "0.2",
 												"time_down_event": {
-													"event": "(remove_ + $var(uuid))",
+													"event": "(gm1:remove_ + $var(name))",
 													"target": "self"
 												}
 											}
@@ -259,7 +259,7 @@
 								"values": [
 									{
 										"key": "list",
-										"template": "$var(uuid)"
+										"template": "(gm1: + $var(name))"
 									}
 								]
 							},
@@ -268,11 +268,11 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "(remove_ + $var(uuid))",
+										"key": "(gm1:remove_ + $var(name))",
 										"template": {
 											"remove": {
 												"component_groups": [
-													"$var(uuid)"
+													"(gm1: + $var(name))"
 												]
 											}
 										}
