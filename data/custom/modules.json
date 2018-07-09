@@ -205,6 +205,81 @@
 								]
 							}
 						]
+					},
+					{
+						"define": "$is_path(../events/./redirect)",
+						"foreach_index": false,
+						"vars": {
+							"uuid": "$uuid",
+							"range": "16"
+						},
+						"modify": [
+							{
+								"path": "minecraft:entity/component_groups",
+								"method": "replace",
+								"values": [
+									{
+										"key": "$var(uuid)",
+										"template": {
+											"minecraft:behavior.send_event": {
+												"priority": "0",
+												"event_choices": [
+													{
+														"min_activation_range": "0.0",
+														"max_activation_range": "$var(range)",
+														"cooldown_time": "0.1",
+														"cast_duration": "0.0",
+														"particle_color": "#FFFFFFFF",
+														"weight": "3",
+														"filters": "$var(filters)",
+														"sequence": [
+															{
+																"base_delay": "0.0",
+																"event": "$var(event)"
+															}
+														]
+													}
+												]
+											},
+											"minecraft:timer": {
+												"looping": "false",
+												"time": "0.1",
+												"time_down_event": {
+													"event": "(remove_ + $var(uuid))",
+													"target": "self"
+												}
+											}
+										}
+									}
+								]
+							},
+							{
+								"path": "($module_path(2) + /add/component_groups)",
+								"method": "append",
+								"values": [
+									{
+										"key": "list",
+										"template": "$var(uuid)"
+									}
+								]
+							},
+							{
+								"path": "minecraft:entity/events",
+								"method": "replace",
+								"values": [
+									{
+										"key": "(remove_ + $var(uuid))",
+										"template": {
+											"remove": {
+												"component_groups": [
+													"$var(uuid)"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
 					}
 				]
 			},

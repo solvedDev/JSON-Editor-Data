@@ -50,7 +50,7 @@
 				]
 			},
 			{
-				"recognize": "$is_type(event)",
+				"recognize": "$is(event)",
 				"method": "replace",
 				"propose": [
 					{
@@ -291,6 +291,10 @@
 					{
 						"key": "spawn",
 						"type": "object"
+					},
+					{
+						"key": "redirect",
+						"type": "object"
 					}
 				]
 			},
@@ -336,6 +340,34 @@
 					},
 					{
 						"function": "$parse_documentation(blocks, string)"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/./redirect)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "filters",
+						"type": "object"
+					},
+					{
+						"key": "event",
+						"type": "object"
+					},
+					{
+						"key": "range",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/events/./redirect/range)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "range",
+						"type": "16"
 					}
 				]
 			},
