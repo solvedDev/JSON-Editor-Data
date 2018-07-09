@@ -7,7 +7,7 @@
 				"vars": {
 					"healthPerHeal": "1",
 					"timeBetweenHeal": "1"
-				}
+				},
 				"modify": [
 					{
 						"path": "$module_path(1)",
