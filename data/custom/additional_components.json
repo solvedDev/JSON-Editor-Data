@@ -17,6 +17,9 @@
 		},
 		"__des__": "Set the health of an entity."
 	},
+	"minecraft:home": {
+		"__des__": "Sets the current home of an entity."
+	},
 	"minecraft:movement": {
 		"value": {
 			"type": "Integer",
