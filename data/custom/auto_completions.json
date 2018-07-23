@@ -193,6 +193,10 @@
 					{
 						"key": "filters",
 						"type": "object"
+					},
+					{
+						"key": "event",
+						"type": "object"
 					}
 				]
 			},
