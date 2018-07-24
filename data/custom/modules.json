@@ -3,6 +3,32 @@
 		"regions": [
 			{
 				"name": "events",
+				"parse": [
+					{ "path": "minecraft:entity", "depth": 0 }
+				],
+				"modules": [
+					{
+						"define": "$is_path(../add/effects)",
+						"foreach_index": true, 
+						"vars": {
+						},
+						"modify": [
+							{
+								"path": "",
+								"method": "replace",
+								"values": [
+									{
+										"key": "minecraft:entity",
+										"template": "$combine($file, $file($module))"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"name": "events",
 				"parse": [ "minecraft:entity/events" ],
 				"modules": [
 					{
@@ -286,7 +312,10 @@
 			},
 			{
 				"name": "components",
-				"parse": [ "minecraft:entity/components", "minecraft:entity/component_groups" ],
+				"parse": [
+					{ "path": "minecraft:entity/components", "depth": 0 },
+					{ "path": "minecraft:entity/component_groups", "depth": 1 }
+				],
 				"modules": [
 					
 				]
