@@ -22,7 +22,7 @@
 								]
 							},
 							{
-								"path": "$module_path(0)",
+								"path": "$module_path(1)",
 								"method": "replace",
 								"values": [
 									{
@@ -48,7 +48,7 @@
 								]
 							},
 							{
-								"path": "$module_path(0)",
+								"path": "$module_path(1)",
 								"method": "replace",
 								"values": [
 									{
