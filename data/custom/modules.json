@@ -16,7 +16,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "minecraft:entity",
+										"key": "",
 										"template": "$combine($own_file, $mod_file)"
 									}
 								]
@@ -26,7 +26,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "minecraft:entity",
+										"key": "imports",
 										"template": "undefined"
 									}
 								]
@@ -42,7 +42,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "minecraft:entity",
+										"key": "",
 										"template": "$combine($mod_file, $own_file)"
 									}
 								]
@@ -52,7 +52,7 @@
 								"method": "replace",
 								"values": [
 									{
-										"key": "minecraft:entity",
+										"key": "extends",
 										"template": "undefined"
 									}
 								]
