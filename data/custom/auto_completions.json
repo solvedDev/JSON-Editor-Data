@@ -288,6 +288,41 @@
 			},
 
 			//CUSTOM
+			//IMPORTS | EXTENDS
+			{
+				"recognize": "$is(minecraft:entity)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "imports",
+						"type": "object"
+					},
+					{
+						"key": "extends",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/imports) or $is_path(minecraft:entity/extends)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(minecraft:entity/imports/.) or $is_path(minecraft:entity/extends/.)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$project_files",
+						"type": "string"
+					}
+				]
+			},
 			{
 				"recognize": "$is_path(minecraft:entity/events/.)",
 				"method": "append",
