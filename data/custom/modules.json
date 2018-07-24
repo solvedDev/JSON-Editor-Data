@@ -19,7 +19,7 @@
 								"values": [
 									{
 										"key": "minecraft:entity",
-										"template": "$combine($file, $file_on_$module)"
+										"template": "$combine($own_file, $mod_file)"
 									}
 								]
 							}
