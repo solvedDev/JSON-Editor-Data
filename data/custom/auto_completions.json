@@ -304,7 +304,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/imports) or $is_path(minecraft:entity/extends)",
+				"recognize": "($is_path(./imports) or $is_path(./extends))",
 				"method": "append",
 				"propose": [
 					{
@@ -314,7 +314,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/imports/.) or $is_path(minecraft:entity/extends/.)",
+				"recognize": "($is_path(./imports/.) or $is_path(./extends/.))",
 				"method": "append",
 				"propose": [
 					{
