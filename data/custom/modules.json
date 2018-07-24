@@ -2,6 +2,66 @@
 	"entity": {
 		"regions": [
 			{
+				"name": "imports-extends",
+				"parse": [
+					{ "path": "minecraft:entity", "depth": 0 }
+				],
+				"modules": [
+					{
+						"define": "$is_path(../imports)",
+						"foreach_index": true, 
+						"modify": [
+							{
+								"path": "",
+								"method": "replace",
+								"values": [
+									{
+										"key": "minecraft:entity",
+										"template": "$combine($own_file, $mod_file)"
+									}
+								]
+							},
+							{
+								"path": "$module_path(0)",
+								"method": "replace",
+								"values": [
+									{
+										"key": "minecraft:entity",
+										"template": "undefined"
+									}
+								]
+							}
+						]
+					},
+					{
+						"define": "$is_path(../extends)",
+						"foreach_index": true, 
+						"modify": [
+							{
+								"path": "",
+								"method": "replace",
+								"values": [
+									{
+										"key": "minecraft:entity",
+										"template": "$combine($mod_file, $own_file)"
+									}
+								]
+							},
+							{
+								"path": "$module_path(0)",
+								"method": "replace",
+								"values": [
+									{
+										"key": "minecraft:entity",
+										"template": "undefined"
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
 				"name": "import",
 				"parse": [
 					{ "path": "minecraft:entity", "depth": 0 }
