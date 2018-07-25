@@ -657,11 +657,21 @@
 				]
 			},
 			{
-				"recognize": "$is(wants) or $is(gives)",
+				"recognize": "$is(wants)",
 				"method": "replace",
 				"propose": [
 					{
-						"function": "$next_list_index",
+						"function": "$next_list_index(1)",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(gives)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index(0)",
 						"type": "object"
 					}
 				]
