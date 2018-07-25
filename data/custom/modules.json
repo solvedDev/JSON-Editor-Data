@@ -353,32 +353,6 @@
 						]
 					}
 				]
-			},
-			{
-				"name": "import",
-				"parse": [
-					{ "path": "minecraft:entity", "depth": 0 }
-				],
-				"modules": [
-					{
-						"define": "$is_path(../import)",
-						"foreach_index": true, 
-						"vars": {
-						},
-						"modify": [
-							{
-								"path": "",
-								"method": "replace",
-								"values": [
-									{
-										"key": "minecraft:entity",
-										"template": "$combine($own_file, $mod_file)"
-									}
-								]
-							}
-						]
-					}
-				]
 			}
 		]
 	}
