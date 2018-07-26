@@ -1,4 +1,12 @@
 {
+	//DATA VERSION
+	"version": "1.0.0",
+	"changelog": [
+		"added 'imports' statement",
+		"added 'extends' statement",
+		"improved trade auto-completions"
+	],
+
 	//HTML
 	"html": [
 		"editor_template.html",
