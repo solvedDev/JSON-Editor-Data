@@ -1,10 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"changelog": [
-		"added 'imports' statement",
-		"added 'extends' statement",
-		"improved trade auto-completions"
+		"small bug fixes"
 	],
 
 	//HTML
