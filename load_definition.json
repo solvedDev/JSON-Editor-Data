@@ -1,8 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"changelog": [
-		"small bug fixes"
+		"added gm1:is_marker component"
 	],
 
 	//HTML

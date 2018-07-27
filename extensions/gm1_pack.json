@@ -176,6 +176,31 @@
 						]
 					}
 				]
+			},
+			{
+				"define": "$is_path(../gm1:is_marker)",
+				"foreach_index": false, 
+				"modify": [
+					{
+						"path": "$module_path(1)",
+						"method": "replace",
+						"values": [
+							{
+								"key": "minecraft:damage_sensor",
+								"template": {
+									"cause": "any",
+									"deals_damage": "false"
+								}
+							},
+							{
+								"key": "minecraft:scale",
+								"template": {
+									"value": "0"
+								}
+							}
+						]
+					}
+				]
 			}
 		],
 		"descriptions": {
@@ -197,6 +222,9 @@
 			},
 			"gm1:invisible": {
 				"__des__": "Sets that this entity is invisible. Uses minecraft:scale internally"
+			},
+			"gm1:is_marker": {
+				"__des__": "Sets that this entity is a marker entity. Uses minecraft:scale & minecraft:damage_sensor internally"
 			},
 			"gm1:loot_kill": {
 				"__des__": "This component kills the entity once you add it. Uses minecraft:health & minecraft:scale internally"
