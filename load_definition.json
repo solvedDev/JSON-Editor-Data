@@ -1,8 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"changelog": [
-		"huge filter update! :)"
+		"'imports' & 'extends' now appear above 'do_not_upgrade'"
 	],
 
 	//HTML

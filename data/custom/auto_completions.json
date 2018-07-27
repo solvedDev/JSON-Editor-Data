@@ -3,6 +3,22 @@
 		"define": "$is_path(minecraft:entity/..)", //Defines what an entity file is
 		"basic": [ "vanilla.entities", "documentation.components" ], //Links to var
 		"extend": [
+			//IMPORTS | EXTENDS
+			{
+				"recognize": "$is(minecraft:entity)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "extends",
+						"type": "object"
+					},
+					{
+						"key": "imports",
+						"type": "object"
+					}
+				]
+			},
+
 			//GENERAL
 			{
 				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
@@ -424,21 +440,6 @@
 			},
 
 			//CUSTOM
-			//IMPORTS | EXTENDS
-			{
-				"recognize": "$is(minecraft:entity)",
-				"method": "append",
-				"propose": [
-					{
-						"key": "imports",
-						"type": "object"
-					},
-					{
-						"key": "extends",
-						"type": "object"
-					}
-				]
-			},
 			{
 				"recognize": "($is_path(./imports) or $is_path(./extends))",
 				"method": "append",
