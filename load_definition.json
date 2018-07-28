@@ -1,10 +1,11 @@
 {
 	//DATA VERSION
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"changelog": [
 		"improved trade auto-completions",
 		"improved entity spawning syntax in events",
-		"improved item spawning syntax in events"
+		"improved item spawning syntax in events",
+		"renamed 'redirect' to 'send'"
 	],
 
 	//HTML

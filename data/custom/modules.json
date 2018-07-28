@@ -198,7 +198,7 @@
 						]
 					},
 					{
-						"define": "$is_path(../events/./redirect)",
+						"define": "$is_path(../events/./send)",
 						"foreach_index": false,
 						"vars": {
 							"uuid": "$small_uuid",

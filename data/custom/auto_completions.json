@@ -473,7 +473,7 @@
 						"type": "object"
 					},
 					{
-						"key": "redirect",
+						"key": "send",
 						"type": "object"
 					}
 				]
@@ -511,7 +511,7 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/events/./redirect)",
+				"recognize": "$is_path(minecraft:entity/events/./send)",
 				"method": "replace",
 				"propose": [
 					{
@@ -529,12 +529,12 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/events/./redirect/range)",
+				"recognize": "$is_path(minecraft:entity/events/./send/range)",
 				"method": "replace",
 				"propose": [
 					{
-						"key": "range",
-						"type": "16"
+						"key": "16",
+						"type": "number"
 					}
 				]
 			},
