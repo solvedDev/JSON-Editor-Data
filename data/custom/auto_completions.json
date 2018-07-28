@@ -844,6 +844,30 @@
 				"method": "replace",
 				"propose": [
 					{
+						"key": "min",
+						"type": "object"
+					},
+					{
+						"key": "max",
+						"type": "object"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(quantity) and $has_child_not(min) and $has_child_not(max)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "1",
+						"type": "number"
+					}
+				] 
+			},
+			{
+				"recognize": "$is(min) or $is(max)",
+				"method": "replace",
+				"propose": [
+					{
 						"key": "1",
 						"type": "number"
 					}

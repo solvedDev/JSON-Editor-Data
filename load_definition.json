@@ -2,7 +2,7 @@
 	//DATA VERSION
 	"version": "1.0.4",
 	"changelog": [
-		"'imports' & 'extends' now appear above 'do_not_upgrade'"
+		"improved trade auto-completions"
 	],
 
 	//HTML
