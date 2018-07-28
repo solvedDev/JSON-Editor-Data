@@ -1,8 +1,9 @@
 {
 	//DATA VERSION
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"changelog": [
-		"improved item suggestion"
+		"improved item suggestion",
+		"added effects & gamerules"
 	],
 
 	//HTML
@@ -16,6 +17,7 @@
 		"custom/auto_completions.json",
 		"custom/highlighter.json",
 		"custom/additional_components.json",
+		"custom/additional_documentation.json",
 		"custom/modules.json"
 	],
 

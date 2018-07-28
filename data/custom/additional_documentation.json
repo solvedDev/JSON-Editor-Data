@@ -1,0 +1,12 @@
+{
+	"effects": [
+		"absorption", "blindness", "conduit_power", "fatal_poison", "fire_resistance", "haste", "health_boost", "hunger",
+		"instant_damage", "instant_health", "invisibility", "jump_boost", "levitation", "mining_fatigue", "nausea", "night_vision",
+		"poison", "regeneration", "resistance", "saturation", "slowness", "speed", "strength", "water_breathing", "weakness", "wither"
+	],
+	"gamerules": [
+		"commandblockoutput", "dodaylightcycle", "doentitydrops", "dofiretick", "domobloot", "domobspawning", "dotiledrops", 
+		"doweathercycle", "drowningdamage", "falldamage", "firedamage", "keepinventory", "mobgriefing", "naturalregeneration", "pvp",
+		"sendcommandfeedback", "showcoordinates", "tntexplodes"
+	]
+}
