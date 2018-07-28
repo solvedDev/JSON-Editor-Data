@@ -30,6 +30,28 @@
 				] 
 			},
 			{
+				"recognize": "$is(items) or $contains(Items) or $contains(items) and $is_component_not",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../items/.) or $contains(Items)_on_$parent or $contains(items)_on_$parent and $is_component_not_on_$parent",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$parse_documentation(items, string)"
+					},
+					{
+						"function": "$parse_documentation(blocks, string)"
+					}
+				]
+			},
+			{
 				"recognize": "$is(minecraft:entity)",
 				"method": "append",
 				"propose": [
