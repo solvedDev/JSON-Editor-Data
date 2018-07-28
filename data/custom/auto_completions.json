@@ -465,7 +465,11 @@
 				"method": "append",
 				"propose": [
 					{
-						"key": "spawn",
+						"key": "spawn_entity",
+						"type": "object"
+					},
+					{
+						"key": "spawn_items",
 						"type": "object"
 					},
 					{
@@ -475,40 +479,27 @@
 				]
 			},
 			{
-				"recognize": "$is_path(minecraft:entity/events/./spawn)",
+				"recognize": "$is_path(../events/./spawn_entity)",
 				"method": "replace",
 				"propose": [
 					{
-						"key": "entity",
-						"type": "object"
-					},
-					{
-						"key": "item",
+						"key": "id",
 						"type": "object"
 					}
 				]
 			},
 			{
-				"recognize": "$is_path(../events/./spawn/entity) or $is_path(../events/./spawn/item)",
+				"recognize": "$is_path(../events/./spawn_items)",
 				"method": "replace",
 				"propose": [
 					{
-						"key": "value",
+						"function": "$next_list_index",
 						"type": "object"
 					}
 				]
 			},
 			{
-				"recognize": "$is_path(../events/./spawn/entity/value)",
-				"method": "replace",
-				"propose": [
-					{
-						"function": "$parse_documentation(entities, string, minecraft:)"
-					}
-				]
-			},
-			{
-				"recognize": "$is_path(../events/./spawn/item/value)",
+				"recognize": "$is_path(../events/./spawn_items/.)",
 				"method": "replace",
 				"propose": [
 					{

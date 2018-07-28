@@ -65,10 +65,10 @@
 						]
 					},
 					{
-						"define": "$is_path(../events/./spawn/entity)",
+						"define": "$is_path(../events/./spawn_entity)",
 						"foreach_index": false,
 						"vars": {
-							"@name": "(spawn_ + $var(value))"
+							"@name": "(spawn_ + $var(id))"
 						},
 						"modify": [
 							{
@@ -90,7 +90,7 @@
 											"minecraft:spawn_entity": {
 												"max_wait_time": "0",
 												"min_wait_time": "0",
-												"spawn_entity": "$var(value)",
+												"spawn_entity": "$var(id)",
 												"spawn_sound": "x"
 											}
 										}
@@ -98,7 +98,7 @@
 								]
 							},
 							{
-								"path": "($module_path(2) + /add/component_groups)",
+								"path": "($module_path(1) + /add/component_groups)",
 								"method": "append",
 								"values": [
 									{
@@ -124,7 +124,7 @@
 								]
 							},
 							{
-								"path": "$module_path(2)",
+								"path": "$module_path(1)",
 								"method": "replace",
 								"values": [
 									{
@@ -136,10 +136,11 @@
 						]
 					},
 					{
-						"define": "$is_path(../events/./spawn/item)",
+						"define": "$is_path(../events/./spawn_items)",
 						"foreach_index": false,
 						"vars": {
-							"@name": "(spawn_ + $var(value))"
+							"uuid": "(_ + $small_uuid)",
+							"@name": "(spawn_ + $var(0) + $var(uuid))"
 						},
 						"modify": [
 							{
@@ -149,27 +150,17 @@
 									{
 										"key": "(gm1: + $var(name))",
 										"template": {
-											"minecraft:timer": {
-												"looping": "false",
-												"randomInterval": "false",
-												"time": 0.0,
-												"time_down_event": {
-													"event": "(gm1:remove_ + $var(name))",
-													"target": "self"
-												}
-											},
-											"minecraft:spawn_entity": {
-												"max_wait_time": "0",
-												"min_wait_time": "0",
-												"spawn_item": "$var(value)",
-												"spawn_sound": "plop"
+											"gm1:spawn_items": {
+												"time": "0.1",
+												"items": "$module",
+												"event": "(gm1:remove_ + $var(name))"
 											}
 										}
 									}
 								]
 							},
 							{
-								"path": "($module_path(2) + /add/component_groups)",
+								"path": "($module_path(1) + /add/component_groups)",
 								"method": "append",
 								"values": [
 									{
@@ -195,7 +186,7 @@
 								]
 							},
 							{
-								"path": "$module_path(2)",
+								"path": "$module_path(1)",
 								"method": "replace",
 								"values": [
 									{
