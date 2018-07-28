@@ -460,6 +460,100 @@
 					}
 				]
 			},
+			{
+				"recognize": "$is_path(../filters/..) and $is(domain) and $is(is_game_rule)_on_$sibling_value(test)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(gamerules, string)"
+					}
+				]
+			},
+
+			//SPELL EFFECTS
+			{
+				"recognize": "$contains(effects) and $contains_not(spell_effects)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../effects/.) or $is_path(../add_effects/.)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "effect",
+						"type": "object"
+					},
+					{
+						"key": "duration",
+						"type": "object"
+					},
+					{
+						"key": "amplifier",
+						"type": "object"
+					},
+					{
+						"key": "visible",
+						"type": "object"
+					},
+					{
+						"key": "ambient",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is(effect) or $is_path(../remove_effects/.)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$parse_documentation(effects, string)"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../effects/./duration) or $is_path(../add_effects/./duration)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "30",
+						"type": "number"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../effects/./amplifier) or $is_path(../effects/./visible) or $is_path(../effects/./ambient)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "0",
+						"type": "number"
+					},
+					{
+						"key": "1",
+						"type": "number"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../add_effects/./amplifier) or $is_path(../add_effects/./visible) or $is_path(../add_effects/./ambient)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "0",
+						"type": "number"
+					},
+					{
+						"key": "1",
+						"type": "number"
+					}
+				]
+			},
 
 			//CUSTOM
 			{
@@ -570,42 +664,6 @@
 					},
 					{
 						"key": "components",
-						"type": "object"
-					}
-				]
-			},
-			{
-				"recognize": "$contains(effects) and $is_not(spell_effects) and $is_not(remove_effects)",
-				"method": "replace",
-				"propose": [
-					{
-						"function": "$next_list_index",
-						"type": "object"
-					}
-				]
-			},
-			{
-				"recognize": "$is_path(../effects/.) or $is_path(../add_effects/.)",
-				"method": "replace",
-				"propose": [
-					{
-						"key": "effect",
-						"type": "object"
-					},
-					{
-						"key": "duration",
-						"type": "object"
-					},
-					{
-						"key": "amplifier",
-						"type": "object"
-					},
-					{
-						"key": "visible",
-						"type": "object"
-					},
-					{
-						"key": "ambient",
 						"type": "object"
 					}
 				]

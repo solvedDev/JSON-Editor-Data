@@ -1,9 +1,10 @@
 {
 	//DATA VERSION
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"changelog": [
 		"improved item suggestion",
-		"added effects & gamerules"
+		"added effects & gamerules",
+		"auto-completions now suggests effects & gamerules"
 	],
 
 	//HTML
