@@ -40,11 +40,21 @@
 				]
 			},
 			{
-				"recognize": "$is(table)",
+				"recognize": "$is(table) and $is_not(minecraft:trade_table)_on_$parent",
 				"method": "append",
 				"propose": [
 					{
-						"function": "$project_files(\\loot_tables)",
+						"function": "$project_files(loot_tables)",
+						"type": "string"
+					}
+				]
+			},
+			{
+				"recognize": "$is(table) and $is(minecraft:trade_table)_on_$parent",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$project_files(trading)",
 						"type": "string"
 					}
 				]
