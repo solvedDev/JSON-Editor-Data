@@ -1,9 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"changelog": [
-		"I know your pain.",
-		"The update notification will no longer show up ;)"
+		"pre9 is now available!"
 	],
 
 	//HTML
