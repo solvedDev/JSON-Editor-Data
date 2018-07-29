@@ -1,10 +1,10 @@
 {
 	//DATA VERSION
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"changelog": [
-		"improved item suggestion",
-		"added effects & gamerules",
-		"auto-completions now suggests effects & gamerules"
+		"loot table filename suggestions",
+		"third layer object suggestions",
+		"fourth layer value suggestions"
 	],
 
 	//HTML

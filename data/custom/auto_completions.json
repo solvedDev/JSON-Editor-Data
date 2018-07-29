@@ -30,7 +30,7 @@
 				] 
 			},
 			{
-				"recognize": "$is(items) or $contains(Items) or $contains(items) and $is_component_not",
+				"recognize": "$is(items) or $contains(Items) or $contains(items) and $is_component_not and $is_not(minecraft:interact)_on_$parent",
 				"method": "append",
 				"propose": [
 					{
@@ -40,7 +40,36 @@
 				]
 			},
 			{
-				"recognize": "$is_path(../items/.) or $contains(Items)_on_$parent or $contains(items)_on_$parent and $is_component_not_on_$parent",
+				"recognize": "$is(table)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$project_files(\\loot_tables)",
+						"type": "string"
+					}
+				]
+			},
+			{
+				"recognize": "$is(spawn_entities)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../spawn_entities/.)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$parse_documentation(entities, string)"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../items/.) or $contains(Items)_on_$parent or $contains(items)_on_$parent and $is_component_not_on_$parent and $is_not(minecraft:interact)_on_$ancestor(2)",
 				"method": "append",
 				"propose": [
 					{
@@ -124,7 +153,21 @@
 				"method": "replace",
 				"propose": [
 					{
+						"function": "$get_third_layer_args",
+						"type": "object"
+					},
+					{
 						"function": "$get_component_values",
+						"type": "value"
+					}
+				]
+			},
+			{
+				"recognize": "($is_path(../components/././.) or $is_path(minecraft:entity/component_groups/./././.))",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$get_third_layer_values",
 						"type": "value"
 					}
 				]
