@@ -201,6 +201,90 @@
 						]
 					}
 				]
+			},
+			{
+				"define": "$is_path(../gm1:item_sensor)",
+				"foreach_index": true,
+				"vars": {
+					"@group_name": "(holds_ + $var(item) + _in_ + $var(domain))",
+					"domain": "hand"
+				},
+				"modify": [
+					{
+						"path": "minecraft:entity/component_groups/gm1:default_items",
+						"method": "replace",
+						"values": [
+							{
+								"key": "combine",
+								"template": "$var(default)"
+							}
+						]
+					},
+					{
+						"path": "minecraft:entity/component_groups",
+						"method": "replace",
+						"values": [
+							{
+								"key": "(gm1: + $var(group_name))",
+								"template": "$var(components)"
+							}
+						]
+					},
+					{
+						"path": "$module_path(1) + /minecraft:environment_sensor",
+						"method": "replace",
+						"values": [
+							{
+								"key": "list-unshift",
+								"template": {
+									"on_environment": {
+										"filters": { "test": "has_equipment", "operator": "not", "domain": "$var(domain)", "value": "$var(item)" },
+										"event":  "(gm1:reset_ + $var(group_name))"
+									}
+								}
+							},
+							{
+								"key": "list",
+								"template": {
+									"on_environment": {
+										"filters": { "test": "has_equipment", "domain": "$var(domain)", "value": "$var(item)" },
+										"event":  "(gm1:on_ + $var(group_name))"
+									}
+								}
+							}
+						]
+					},
+					{
+						"path": "minecraft:entity/events/gm1:reset_ + $var(group_name) + /remove/component_groups",
+						"method": "replace",
+						"values": [
+							{
+								"key": "list",
+								"template": "(gm1: + $var(group_name))"
+							}
+						]
+					},
+					{
+						"path": "minecraft:entity/events/gm1:reset_ + $var(group_name) + /add/component_groups",
+						"method": "replace",
+						"values": [
+							{
+								"key": "list",
+								"template": "gm1:default_items"
+							}
+						]
+					},
+					{
+						"path": "minecraft:entity/events/gm1:on_ + $var(group_name) + /add/component_groups",
+						"method": "replace",
+						"values": [
+							{
+								"key": "list",
+								"template": "(gm1: + $var(group_name))"
+							}
+						]
+					}
+				]
 			}
 		],
 		"descriptions": {
@@ -225,6 +309,30 @@
 			},
 			"gm1:is_marker": {
 				"__des__": "Sets that this entity is a marker entity. Uses minecraft:scale & minecraft:damage_sensor internally"
+			},
+			"gm1:item_sensor": {
+				"item": {
+					"type": "String",
+					"default_value": "",
+					"description": "The item to react to"
+				},
+				"domain": {
+					"type": "String",
+					"default_value": "hand",
+					"description": "Where the item has to be in order to add the components defined. (any, armor, hand, feet, leg, torso, head)"
+				},
+				"components": {
+					"type": "JSON Object",
+					"default_value": "",
+					"description": "Components to add upon holding this item"
+				},
+				"default": {
+					"type": "JSON Object",
+					"default_value": "",
+					"description": "All components of 'components' but with default values"
+				},
+				"__do_not_use__": true,
+				"__des__": "Give items special behavior with this component. Uses minecraft:environment_sensor internally"
 			},
 			"gm1:loot_kill": {
 				"__des__": "This component kills the entity once you add it. Uses minecraft:health & minecraft:scale internally"
@@ -278,7 +386,85 @@
 
 		],
 		"auto_completions": [
-
+			//GM1:ITEM_SENSOR
+			{
+				"recognize": "$is(gm1:item_sensor)",
+				"method": "append",
+				"propose": [
+					{
+						"function": "$next_list_index",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../gm1:item_sensor/.)",
+				"method": "append",
+				"propose": [
+					{
+						"key": "item",
+						"type": "object"
+					},
+					{
+						"key": "domain",
+						"type": "object"
+					},
+					{
+						"key": "components",
+						"type": "object"
+					},
+					{
+						"key": "default",
+						"type": "object"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../gm1:item_sensor/./item)",
+				"method": "replace",
+				"propose": [
+					{
+						"function": "$parse_documentation(items, string)"
+					},
+					{
+						"function": "$parse_documentation(blocks, string)"
+					}
+				]
+			},
+			{
+				"recognize": "$is_path(../gm1:item_sensor/./domain)",
+				"method": "replace",
+				"propose": [
+					{
+						"key": "hand",
+						"type": "string"
+					},
+					{
+						"key": "any",
+						"type": "string"
+					},
+					{
+						"key": "armor",
+						"type": "string"
+					},
+					{
+						"key": "feet",
+						"type": "string"
+					},
+					{
+						"key": "leg",
+						"type": "string"
+					},
+					{
+						"key": "torso",
+						"type": "string"
+					},
+					{
+						"key": "head",
+						"type": "string"
+					}
+				]
+			}
 		]
 	}
 }

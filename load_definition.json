@@ -1,8 +1,9 @@
 {
 	//DATA VERSION
-	"version": "1.0.13",
+	"version": "1.0.14",
 	"changelog": [
-		"pre9 is now available!"
+		"pre10 is now available!",
+		"added gm1:item_sensor component"
 	],
 
 	//HTML

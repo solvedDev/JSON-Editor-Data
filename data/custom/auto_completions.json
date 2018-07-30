@@ -93,6 +93,7 @@
 			{
 				"recognize": "$is(minecraft:entity)",
 				"method": "append",
+				"stop_search": true,
 				"propose": [
 					{
 						"key": "do_not_upgrade",
@@ -115,6 +116,7 @@
 			{
 				"recognize": "($contains(event) and $is_not(event) and $is_not(events))",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"key": "event",
@@ -129,6 +131,7 @@
 			{
 				"recognize": "$is(event)",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/events, string)",
@@ -187,6 +190,7 @@
 			{
 				"recognize": "$is_path(minecraft:entity/events)",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"function": "$parse_documentation(events, object, , true)",  //The comma placement is not a bug; hands over empty string ""!
@@ -229,6 +233,7 @@
 			{
 				"recognize": "$is(randomize) or $is(sequence)",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"function": "$next_list_index",
@@ -239,6 +244,7 @@
 			{
 				"recognize": "$is(add) or $is(remove) and $is_path(minecraft:entity/events/..)",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"key": "component_groups",
@@ -257,6 +263,7 @@
 			{
 				"recognize": "$is_path(minecraft:entity/events/..) and $is(component_groups)",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"function": "$next_list_index",
@@ -267,6 +274,7 @@
 			{
 				"recognize": "$is_path(minecraft:entity/events/..) and $is_path(../component_groups/.)",
 				"method": "replace",
+				"stop_search": true,
 				"propose": [
 					{
 						"function": "$parse_file(minecraft:entity/component_groups, string)",
