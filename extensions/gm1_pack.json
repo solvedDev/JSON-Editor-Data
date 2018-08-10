@@ -338,7 +338,7 @@
 				"__des__": "This component kills the entity once you add it. Uses minecraft:health & minecraft:scale internally"
 			},
 			"gm1:silent_kill": {
-				"time": {
+				"kill_time": {
 					"type": "Integer",
 					"default_value": "0",
 					"description": "Time it takes until the entity gets killed"
