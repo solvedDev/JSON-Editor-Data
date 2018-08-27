@@ -1,8 +1,10 @@
 {
 	//DATA VERSION
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"changelog": [
-		"pre11 is now available!"
+		"pre12 is now available!",
+		"bug fixes",
+		"new v1.7.0 documentation"
 	],
 
 	//HTML

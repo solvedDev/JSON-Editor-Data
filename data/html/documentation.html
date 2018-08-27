@@ -1,4 +1,6 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><h1>Version: 1.6.0.5</h1>
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><h1>Version: 1.7.0.2</h1>
 <h2><p id="Index">Index</p></h2>
 <table border="1">
 <tbody><tr> <th><a href="#[01]Entity%20Definition%20Properties">Entity Definition Properties</a></th> </tr>
@@ -2411,12 +2413,6 @@ Defines this entity's inventory properties.<br><h4>Parameters</h4>
 <td>Integer</td>
 <td>5</td>
 <td>Number of slots the container has<br></td>
-</tr>
-<tr>
-<td>linked_slots_size</td>
-<td>Integer</td>
-<td>0</td>
-<td>Number of linked slots (e.g. Player Hotbar) the container has<br></td>
 </tr>
 <tr>
 <td>private</td>
@@ -4962,6 +4958,12 @@ Allows the mob to use close combat melee attacks.<br><h4>Parameters</h4>
 <td>Defines the entity types this mob will attack<br></td>
 </tr>
 <tr>
+<td>melee_fov</td>
+<td>Decimal</td>
+<td>90.0</td>
+<td>The allowable FOV the actor will use to determine if it can make a valid melee attack<br></td>
+</tr>
+<tr>
 <td>random_stop_interval</td>
 <td>Integer</td>
 <td>0</td>
@@ -5786,6 +5788,12 @@ Allows the mob to use ranged attacks like shooting arrows.<br><h4>Parameters</h4
 <td>Decimal</td>
 <td>0.0</td>
 <td>The minimum amount of time in ticks for the mob to start charging a charged shot. Must be greater than 0 to enable burst shots<br></td>
+</tr>
+<tr>
+<td>ranged_fov</td>
+<td>Decimal</td>
+<td>90.0</td>
+<td>The allowable FOV the actor will use to determine if it can make a valid ranged attack<br></td>
 </tr>
 <tr>
 <td>speed_multiplier</td>
@@ -7939,8 +7947,8 @@ Tests whether the Subject is currently in the named biome.<br><h4>Parameters</h4
 </tr>
 </tbody></table>
 <h4>Examples</h4>
-{ "test": "is_biome", "subject": "self", "operator": "=", "value": "stone_beach" }<br>
-{ "test": "is_biome", "value": "stone_beach" }<br>
+{ "test": "is_biome", "subject": "self", "operator": "=", "value": "beach" }<br>
+{ "test": "is_biome", "value": "beach" }<br>
 <a href="#Index">Back to top</a><br><br>
 
 <h3><p id="is_brightness">is_brightness</p></h3>

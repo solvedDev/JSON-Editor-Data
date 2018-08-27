@@ -21,11 +21,21 @@
 
 			//GENERAL
 			{
-				"recognize": "($is(id) or $contains(entity_type) or $is_path(../transformation/into))", //Describes where to use the new completions
+				"recognize": "($is(spawn_entity) or $is(id) or $contains(entity_type) or $is_path(../minecraft:transformation/into))", //Describes where to use the new completions
 				"method": "replace", //replace or append
 				"propose": [ //What to propose
 					{
 						"function": "$parse_documentation(entities, string, minecraft:)"
+					}
+				]
+			},
+			{
+				"recognize": "($is_path(../spawn_entity/.) or $is_path(../id/.) or $is_path(../minecraft:transformation/into/.))", //Describes where to use the new completions
+				"method": "replace", //replace or append
+				"propose": [ //What to propose
+					{
+						"function": "$parse_file(minecraft:entity/events, string, <, true, >)",
+						"type": "string"
 					}
 				] 
 			},
