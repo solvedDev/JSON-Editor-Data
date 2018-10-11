@@ -1,6 +1,18 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
+    "description": {
+      "identifier": "minecraft:hopper_minecart",
+      "minecraft:spawn_egg": {
+        "value": false
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
 
     "component_groups": {
       "minecraft:hopper_active": {
@@ -23,9 +35,6 @@
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:hopper_minecart"
-      },
       "minecraft:type_family": {
         "family": [ "minecart", "inanimate" ]
       },

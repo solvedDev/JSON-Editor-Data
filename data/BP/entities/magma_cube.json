@@ -1,12 +1,24 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
+    "description": {
+      "identifier": "minecraft:magma_cube",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
 
     "component_groups": {
       "minecraft:slime_large": {
         "minecraft:collision_box": {
-          "width": 1.04,
-          "height": 1.04
+          "width": 2.08,
+          "height": 2.08
         },
         "minecraft:health": {
           "value": 16,
@@ -73,9 +85,6 @@
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:magma_cube"
-      },
       "minecraft:type_family": {
         "family": [ "magmacube", "monster" ]
       },
@@ -92,7 +101,7 @@
         "value": 0.0
       },
       "minecraft:navigation.walk": {
-        "can_float": true,
+        "can_path_over_water": true,
         "avoid_water": true
       },
       "minecraft:jump.static": {

@@ -1,11 +1,20 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
+    "description": {
+      "identifier": "minecraft:wither_skeleton",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:wither_skeleton"
-      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0,
@@ -17,7 +26,7 @@
       },
       "minecraft:collision_box": {
         "width": 0.72,
-        "height": 2.0
+        "height": 2.01
       },
       "minecraft:attack": {
         "damage": 4,
@@ -53,9 +62,28 @@
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
+        "reselect_targets": true,
         "entity_types": [
           {
             "filters": { "test": "is_family", "subject": "other", "value": "player" },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
             "max_dist": 16
           }
         ],

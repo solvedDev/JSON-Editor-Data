@@ -1,6 +1,18 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
+    "description": {
+      "identifier": "minecraft:llama",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
 
     "component_groups": {
       "minecraft:llama_baby": {
@@ -203,7 +215,7 @@
               "filters": { 
                 "all_of": [
                   { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                  { "test" :  "has_equipment", "domain": "hand","subject" : "other", "value" :  "chest:0"}
+                  { "test" :  "has_equipment", "domain": "hand","subject" : "other", "value" :  "chest"}
                 ]
               },
               "event": "minecraft:on_chest",
@@ -274,9 +286,6 @@
 
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:llama"
-      },
       "minecraft:type_family": {
         "family": [ "llama" ]
       },
@@ -296,7 +305,7 @@
         "value": 0.25
       },
       "minecraft:navigation.walk": {
-        "can_float": true,
+        "can_path_over_water": true,
         "avoid_damage_blocks": true
       },
       "minecraft:movement.basic": {

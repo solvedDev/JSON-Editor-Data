@@ -1,7 +1,18 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
-
+    "description": {
+      "identifier": "minecraft:arrow",
+      "minecraft:spawn_egg": {
+        "value": false
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
     "component_groups": {
       "minecraft:hard_arrow": {
         "minecraft:projectile": {
@@ -60,9 +71,6 @@
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:arrow"
-      },
       "minecraft:collision_box": {
         "width": 0.25,
         "height": 0.25

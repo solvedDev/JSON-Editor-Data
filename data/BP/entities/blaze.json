@@ -1,11 +1,19 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
-
-    "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:blaze"
+    "description": {
+      "identifier": "minecraft:blaze",
+      "minecraft:spawn_egg": {
+        "value": true
       },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
+    "components": {
       "minecraft:loot": {
         "table": "loot_tables/entities/blaze.json"
       },
@@ -23,7 +31,7 @@
         "value": 0.23
       },
       "minecraft:navigation.walk": {
-        "can_float": true
+        "can_path_over_water": true
       },
       "minecraft:movement.basic": {
 
@@ -50,8 +58,14 @@
       "minecraft:nameable": {
 
       },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
       "minecraft:behavior.nearest_attackable_target": {
-        "priority": 1,
+        "priority": 2,
         "entity_types": [
           {
             "filters": {
@@ -64,11 +78,8 @@
         ],
         "must_see": true
       },
-      "minecraft:behavior.hurt_by_target": {
-        "priority": 1
-      },
       "minecraft:behavior.melee_attack": {
-        "priority": 2,
+        "priority": 3,
         "max_dist": 3,
         "speed_multiplier": 1,
         "random_stop_interval": 2.0,
@@ -79,7 +90,7 @@
         "def": "minecraft:small_fireball"
       },
       "minecraft:behavior.ranged_attack": {
-        "priority": 3,
+        "priority": 4,
         "attack_interval_min": 3,
         "attack_interval_max": 5,
         "charge_charged_trigger": 0.0,
@@ -89,11 +100,11 @@
         "burst_interval": 0.3
       },
       "minecraft:behavior.random_stroll": {
-        "priority": 3,
+        "priority": 5,
         "speed_multiplier": 1.0
       },
       "minecraft:behavior.random_look_around": {
-        "priority": 4
+        "priority": 6
       },
       "minecraft:type_family": {
         "family": [ "blaze", "monster" ]

@@ -1,6 +1,18 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
+    "description": {
+      "identifier": "minecraft:villager",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
   
     "component_groups": {
       "become_witch": {
@@ -290,10 +302,6 @@
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:villager"
-      },
-
       "minecraft:type_family": {
         "family": "villager"
       },
@@ -316,7 +324,7 @@
         "value": 0.5
       },
       "minecraft:navigation.walk": {
-        "can_float": true,
+        "can_path_over_water": true,
         "can_pass_doors": true,
         "can_open_doors": true,
         "avoid_water": true

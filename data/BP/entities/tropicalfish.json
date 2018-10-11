@@ -1,6 +1,18 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
+    "description": {
+      "identifier": "minecraft:tropicalfish",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
 
     "component_groups": {
 
@@ -512,15 +524,12 @@
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:tropicalfish"
-      },
       "minecraft:type_family": {
         "family": [ "tropicalfish", "fish" ]
       },
       "minecraft:collision_box": {
-        "width": 0.2,
-        "height": 0.2
+        "width": 0.4,
+        "height": 0.4
       },
       "minecraft:health": {
         "value": 6,
@@ -531,7 +540,7 @@
         "table": "loot_tables/entities/tropicalfish.json"
       },
       "minecraft:scale": {
-        "value": 0.6
+        "value": 1.3
       },
 
       "minecraft:breathable": {
@@ -548,7 +557,7 @@
       },
       "minecraft:navigation.generic": { // Allows the mob to go through water
         "is_amphibious": false,
-        "can_float": false,
+        "can_path_over_water": false,
         "can_swim": true,
         "can_walk": false,
         "can_breach": false,

@@ -1,10 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.16",
+	"version": "1.0.17",
 	"changelog": [
-		"pre12 is now available!",
-		"bug fixes",
-		"new v1.7.0 documentation"
+		"new v1.8.0 documentation"
 	],
 
 	//HTML
@@ -32,6 +30,7 @@
 		"bat",
 		"blaze",
 		"boat",
+		"cat",
 		"cave_spider",
 		"chest_minecart",
 		"chicken",
@@ -71,6 +70,7 @@
 		"mooshroom",
 		"mule",
 		"ocelot",
+		"panda",
 		"parrot",
 		"phantom",
 		"pig",

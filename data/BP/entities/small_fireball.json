@@ -1,10 +1,19 @@
 {
+  "format_version": "1.8.0-beta.1",
  "minecraft:entity": {
-    "format_version": "1.2.0",
+  "description": {
+    "identifier": "minecraft:small_fireball",
+    "minecraft:spawn_egg": {
+      "value": false
+    },
+    "minecraft:is_summonable": {
+      "value": false
+    },
+    "minecraft:is_experimental": {
+      "value": false
+    }
+  },
   "components": {
-   "minecraft:identifier": {
-    "id": "minecraft:small_fireball"
-   },
    "minecraft:collision_box": {
     "width": 0.31,
     "height": 0.31

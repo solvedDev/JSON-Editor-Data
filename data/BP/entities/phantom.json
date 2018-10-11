@@ -1,28 +1,48 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.6.0",
+
+    "description": {
+      "identifier": "minecraft:phantom",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
 
     "component_groups": {
+
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:phantom"
-      },
       "minecraft:type_family": {
-        "family": [ "phantom" ]
+        "family": [ "phantom", "undead", "monster" ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/phantom.json"
       },
       "minecraft:nameable": {
       },
       "minecraft:health": {
-        "value": 10,
-        "max": 10
+        "value": 20,
+        "max": 20
       },
       "minecraft:physics": {
         "has_gravity": false
       },
       "minecraft:attack": {
         "damage": 6
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
       },
       "minecraft:collision_box": {
         "width": 0.9,
@@ -36,6 +56,28 @@
         "speed_when_turning": 0.2
       },
       "minecraft:burns_in_daylight": {
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 0,
+        "max_dist": 16.0,
+        "ignore_visibility": true,
+        "entity_types": [
+          {
+            "filters": {
+                "any_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "ocelot"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "cat"}
+                ]
+            },
+            "max_dist": 16,
+            "walk_speed_multiplier": 1,
+            "sprint_speed_multiplier": 1
+          }
+        ]
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 1,

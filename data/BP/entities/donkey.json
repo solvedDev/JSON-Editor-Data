@@ -1,7 +1,18 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
-
+    "description": {
+      "identifier": "minecraft:donkey",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
     "component_groups": {
       "minecraft:donkey_baby": {
         "minecraft:is_baby": {
@@ -162,6 +173,9 @@
           "priority": 0,
           "seat_count": 1,
           "crouching_skip_interact": true,
+          "family_types": [
+            "player"
+          ],
           "interact_text": "action.interact.ride.horse",
           "seats": {
             "position": [ 0.0, 0.925, -0.2 ]
@@ -227,7 +241,7 @@
               "filters": { 
                 "all_of": [
                   { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                  { "test" :  "has_equipment", "domain": "hand","subject" : "other", "value" :  "chest:0"}
+                  { "test" :  "has_equipment", "domain": "hand","subject" : "other", "value" :  "chest"}
                 ]
               },
               "event": "minecraft:on_chest",
@@ -263,9 +277,6 @@
     },
 
     "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:donkey"
-      },
       "minecraft:type_family": {
         "family": [ "donkey" ]
       },
@@ -287,7 +298,7 @@
         "value": 0.175
       },
       "minecraft:navigation.walk": {
-        "can_float": true,
+        "can_path_over_water": true,
         "avoid_water": true,
         "avoid_damage_blocks": true
       },

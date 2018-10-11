@@ -1,11 +1,19 @@
 {
+  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "format_version": "1.2.0",
-
-    "components": {
-      "minecraft:identifier": {
-        "id": "minecraft:llama_spit"
+    "description": {
+      "identifier": "minecraft:llama_spit",
+      "minecraft:spawn_egg": {
+        "value": false
       },
+      "minecraft:is_summonable": {
+        "value": false
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
+    "components": {
       "minecraft:collision_box": {
         "width": 0.31,
         "height": 0.31
