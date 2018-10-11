@@ -1,8 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.17",
+	"version": "1.0.16",
 	"changelog": [
-		"new v1.8.0 documentation"
+		"revoke"
 	],
 
 	//HTML
