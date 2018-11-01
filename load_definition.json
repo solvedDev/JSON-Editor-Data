@@ -1,14 +1,8 @@
 {
 	//DATA VERSION
-	"version": "1.0.16",
+	"version": "1.0.20",
 	"changelog": [
-<<<<<<< HEAD
-		"revoke"
-=======
-		"pre12 is now available!",
-		"bug fixes",
-		"new v1.7.0 documentation"
->>>>>>> parent of 6619547... v1.8.0 update
+		"bug fix"
 	],
 
 	//HTML
