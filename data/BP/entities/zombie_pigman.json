@@ -1,18 +1,7 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:zombie_pigman",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "component_groups": {
       "minecraft:pig_zombie_baby": {
         "minecraft:is_baby": {
@@ -70,6 +59,9 @@
       },
       "minecraft:fire_immune": true,
       "minecraft:burns_in_daylight": false,
+      "minecraft:identifier": {
+        "id": "minecraft:zombie_pigman"
+      },
       "minecraft:type_family": {
         "family": [ "zombie_pigman", "undead", "monster" ]
       },
@@ -103,16 +95,8 @@
         "speed_multiplier": 1.5,
         "track_target": false
       },
-      "minecraft:behavior.stomp_turtle_egg": {
-        "priority": 4,
-        "speed_multiplier": 1,
-        "search_range": 24,
-        "search_height": 3,
-        "goal_radius": 1.14,
-        "interval": 20
-      },
       "minecraft:behavior.move_towards_restriction": {
-        "priority": 5
+        "priority": 4
       },
       "minecraft:behavior.random_stroll": {
         "priority": 7,

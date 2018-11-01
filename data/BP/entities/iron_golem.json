@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:iron_golem",
-      "minecraft:spawn_egg": {
-        "value": false
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:golem_leashed": {
@@ -42,6 +30,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:iron_golem"
+      },
       "minecraft:type_family": {
         "family": [ "irongolem" ]
       },
@@ -62,7 +53,7 @@
         "value": 0.25
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": false,
+        "can_float": false,
         "avoid_water": true,
         "avoid_damage_blocks": true
       },

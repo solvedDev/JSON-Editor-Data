@@ -1,36 +1,15 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:wither",
-      "minecraft:spawn_egg": {
-        "value": false
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:wither"
+      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0
       },
-      "minecraft:damage_sensor": [
-        {
-          "on_damage": {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "undead"
-            }
-          },
-          "deals_damage": false
-        }
-      ],
       "minecraft:health": {
         "value": 600,
         "max": 600
@@ -49,7 +28,7 @@
         "value": 0.25
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_water": true
       },
       "minecraft:movement.basic": {

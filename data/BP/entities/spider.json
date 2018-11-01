@@ -1,19 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:spider",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
-
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:spider_jockey": {
@@ -64,11 +51,7 @@
       "minecraft:spider_neutral": {
         "minecraft:environment_sensor": {
           "on_environment": {
-            "filters": {
-              "test": "is_brightness",
-              "operator": "<",
-              "value": 0.49
-            },
+            "filters": { "test" : "is_brightness", "operator" : "<", "value" : 0.49 },
             "event": "minecraft:become_hostile"
           }
         },
@@ -80,11 +63,7 @@
       "minecraft:spider_hostile": {
         "minecraft:environment_sensor": {
           "on_environment": {
-            "filters": {
-              "test": "is_brightness",
-              "operator": ">",
-              "value": 0.49
-            },
+            "filters": { "test" : "is_brightness", "operator" : ">", "value" : 0.49 },
             "event": "minecraft:become_neutral"
           }
         },
@@ -95,25 +74,13 @@
           "priority": 2,
           "entity_types": [
             {
-              "filters": {
+              "filters": {  
                 "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "snowgolem"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "irongolem"
-                  }
-                ]
-              },
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"}
+                ] 
+ 			  },
               "max_dist": 16
             }
           ],
@@ -146,6 +113,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:spider"
+      },
       "minecraft:nameable": {
       },
       "minecraft:type_family": {
@@ -168,9 +138,9 @@
       },
       "minecraft:movement": {
         "value": 0.3
-      },
+      },      
       "minecraft:navigation.climb": {
-        "can_path_over_water": true
+        "can_float": true
       },
       "minecraft:movement.basic": {
       },
@@ -214,7 +184,7 @@
           "position": [ 0.0, 0.54, -0.1 ]
         }
       },
-      "minecraft:physics": {
+	    "minecraft:physics": {
       }
     },
 
@@ -227,22 +197,13 @@
               {
                 "weight": 80,
                 "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_daytime",
-                      "value": false
-                    },
-                    {
-                      "test": "is_snow_covered",
-                      "value": true
-                    },
-                    {
-                      "test": "is_underground",
-                      "value": false
-                    }
+                  "all_of" : [
+                    { "test" : "is_daytime", "value" : false },
+                    { "test" : "is_snow_covered", "value" : true },
+                    { "test" : "is_underground", "value" : false }
                   ]
                 },
-                "remove": {},
+                "remove": { },
                 "add": {
                   "component_groups": [
                     "minecraft:spider_stray_jockey",
@@ -253,10 +214,9 @@
               {
                 "weight": 80,
                 "filters": {
-                  "test": "is_biome",
-                  "value": "the_nether"
+                  "test": "is_biome", "value" : "the_nether" 
                 },
-                "remove": {},
+                "remove": { },
                 "add": {
                   "component_groups": [
                     "minecraft:spider_wither_jockey",
@@ -267,18 +227,12 @@
               {
                 "weight": 20,
                 "filters": {
-                  "any_of": [
-                    {
-                      "test": "is_daytime",
-                      "value": false
-                    },
-                    {
-                      "test": "is_underground",
-                      "value": true
-                    }
+                  "any_of" : [
+                    { "test" : "is_daytime", "value" : false },
+                    { "test" : "is_underground", "value" : true }
                   ]
                 },
-                "remove": {},
+                "remove": { },
                 "add": {
                   "component_groups": [
                     "minecraft:spider_jockey",
@@ -290,7 +244,7 @@
           },
           {
             "weight": 99,
-            "remove": {},
+            "remove": { },
             "add": {
               "component_groups": [
                 "minecraft:spider_neutral"

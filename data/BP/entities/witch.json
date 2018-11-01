@@ -1,25 +1,17 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:witch",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:witch"
+      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0
       },
       "minecraft:nameable": {
-      },
+	    },
       "minecraft:loot": {
         "table": "loot_tables/entities/witch.json"
       },
@@ -32,7 +24,7 @@
         "value": 0.25
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_water": false
       },
       "minecraft:movement.basic": {
@@ -70,35 +62,23 @@
         "priority": 2,
         "entity_types": [
           {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "snowgolem"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "irongolem"
-                }
-              ]
-            },
+            "filters": {  
+                "any_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"}
+                ] 
+			},
             "max_dist": 10
           }
         ],
         "must_reach": true
       },
-      "minecraft:type_family": {
-        "family": [ "witch", "monster" ]
-      },
-      "minecraft:physics": {
-      }
+     "minecraft:type_family": {
+       "family": [ "witch", "monster" ]
+     },
+	   "minecraft:physics": {
+     }
     }
   }
 }

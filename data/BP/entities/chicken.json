@@ -1,18 +1,7 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:chicken",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "component_groups": {
       "minecraft:chicken_baby": {
         "minecraft:is_baby": {
@@ -90,6 +79,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:chicken"
+      },
       "minecraft:type_family": {
         "family": [ "chicken" ]
       },
@@ -130,7 +122,7 @@
         "mass": 0.6
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_damage_blocks": true
       },
       "minecraft:movement.basic": {

@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:husk",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:look_to_start_zombie_transformation": {
@@ -109,6 +97,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:husk"
+      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0,
@@ -160,10 +151,7 @@
       "minecraft:environment_sensor": [
         {
           "filters": {
-            "test": "is_underwater",
-            "subject": "self",
-            "operator": "==",
-            "value": true
+            "test": "is_underwater", "subject": "self", "operator": "==", "value": true
           },
           "event": "minecraft:start_transforming"
         }
@@ -178,16 +166,8 @@
         "speed_multiplier": 1,
         "track_target": false
       },
-      "minecraft:behavior.stomp_turtle_egg": {
-        "priority": 4,
-        "speed_multiplier": 1,
-        "search_range": 24,
-        "search_height": 3,
-        "goal_radius": 1.14,
-        "interval": 20
-      },
       "minecraft:behavior.move_towards_restriction": {
-        "priority": 5,
+        "priority": 4,
         "speed_multiplier": 1
       },
       "minecraft:behavior.random_stroll": {
@@ -208,49 +188,14 @@
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "within_radius": 25,
-        "reselect_targets": true,
         "entity_types": [
           {
             "filters": {
               "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "snowgolem"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "irongolem"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "villager"
-                }
-              ]
-            },
-            "max_dist": 35
-          },
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "baby_turtle"
-                },
-                {
-                  "test": "in_water",
-                  "subject": "other",
-                  "operator": "!=",
-                  "value": true
-                }
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" },
+                { "test": "is_family", "subject": "other", "value": "villager" }
               ]
             },
             "max_dist": 35

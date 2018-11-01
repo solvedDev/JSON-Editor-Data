@@ -1,20 +1,11 @@
 {
-  "format_version": "1.8.0-beta.1",
 	"minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:thrown_trident",
-      "minecraft:spawn_egg": {
-        "value": false
-      },
-      "minecraft:is_summonable": {
-        "value": false
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
-		  
+		"format_version": "1.2.0",
+	
 		"components": {
+			"minecraft:identifier": {
+				"id": "minecraft:thrown_trident"
+			},
 			"minecraft:collision_box": {
 				"width": 0.25,
 				"height": 0.35
@@ -36,12 +27,11 @@
 				"hitGroundSound": "item.trident.hit_ground",
 				"power": 4,
 				"gravity": 0.10,
-				"uncertaintyBase": 1,
+				"uncertaintyBase": 0,
 				"uncertaintyMultiplier": 0,
 				"stopOnHurt": true,
 				"anchor": 1,
 				"shouldbounce": true,
-				"multipletargets": false,
 				"offset": [ 0, -0.1, 0 ]
 			},
 			"minecraft:physics": {

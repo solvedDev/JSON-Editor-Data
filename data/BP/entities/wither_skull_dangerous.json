@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
  "minecraft:entity": {
-  "description": {
-    "identifier": "minecraft:wither_skull_dangerous",
-    "minecraft:spawn_egg": {
-      "value": false
-    },
-    "minecraft:is_summonable": {
-      "value": false
-    },
-    "minecraft:is_experimental": {
-      "value": false
-    }
-  },
+  "format_version": "1.2.0",
 
   "component_groups": {
     "minecraft:exploding": {
@@ -28,6 +16,9 @@
   },
 
   "components": {
+    "minecraft:identifier": {
+      "id": "minecraft:wither_skull_dangerous"
+    },
     "minecraft:collision_box": {
       "width": 0.15,
       "height": 0.15

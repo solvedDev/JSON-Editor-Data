@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:guardian",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:guardian_aggressive": {
@@ -23,7 +11,8 @@
               "filters": {  
                 "any_of": [
                   { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "squid"}
+                  { "test" :  "is_family", "subject" : "other", "value" :  "squid"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "fish"}
                 ] 
               },
               "max_dist": 16
@@ -69,6 +58,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:guardian"
+      },
       "minecraft:nameable": {
       },
       "minecraft:collision_box": {
@@ -94,7 +86,7 @@
       },
       "minecraft:navigation.generic": {
         "is_amphibious": true,
-        "can_path_over_water": false,
+        "can_float": false,
         "can_swim": true,
         "can_walk": false,
         "can_breach": true
@@ -116,7 +108,8 @@
             "filters": {  
               "any_of": [
                 { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                { "test" :  "is_family", "subject" : "other", "value" :  "squid"}
+                { "test" :  "is_family", "subject" : "other", "value" :  "squid"},
+                { "test" :  "is_family", "subject" : "other", "value" :  "fish"}
               ] 
             },
             "max_dist": 16
@@ -143,8 +136,7 @@
       },
       "minecraft:behavior.random_stroll": {
         "priority": 7,
-        "speed_multiplier": 1.0,
-        "interval": 80
+        "speed_multiplier": 1.0
       },
       "minecraft:behavior.look_at_player": {
         "priority": 8,

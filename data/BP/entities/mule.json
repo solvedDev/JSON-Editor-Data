@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:mule",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:mule_baby": {
@@ -170,9 +158,6 @@
           "priority": 0,
           "seat_count": 1,
           "crouching_skip_interact": true,
-          "family_types": [
-            "player"
-          ],
           "interact_text": "action.interact.ride.horse",
           "seats": {
             "position": [ 0.0, 0.975, -0.2 ]
@@ -207,7 +192,7 @@
             "on_interact": {
               "filters": {
                 "all_of": [
-                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "chest"},
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "chest:0"},
                   { "test" :  "is_family", "subject" : "other", "value" :  "player"}
                 ]
               },
@@ -246,6 +231,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:mule"
+      },
       "minecraft:type_family": {
         "family": [ "mule" ]
       },
@@ -267,7 +255,7 @@
         "value": 0.175
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_water": true,
         "avoid_damage_blocks": true
       },

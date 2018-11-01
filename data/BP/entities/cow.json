@@ -1,18 +1,7 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:cow",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "component_groups": {
       "minecraft:cow_baby": {
         "minecraft:is_baby": {
@@ -81,7 +70,11 @@
       }
     },
 
+
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:cow"
+      },
       "minecraft:type_family": {
         "family": [ "cow" ]
       },
@@ -90,7 +83,7 @@
         "suffocateTime": 0
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_water": true,
         "avoid_damage_blocks": true
       },

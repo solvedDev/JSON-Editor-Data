@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:dolphin",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
     "component_groups": {
       "minecraft:dolphin_adult": {
         "minecraft:loot": {
@@ -75,11 +63,11 @@
         },
         "minecraft:navigation.generic": {
           "is_amphibious": true,
-          "can_path_over_water": false,
+          "can_float": false,
           "can_swim": true,
           "can_walk": false,
           "can_breach": true,
-          "can_sink": false
+          "can_sink":  false
         },
         "minecraft:environment_sensor": [
           {
@@ -104,8 +92,8 @@
       "minecraft:dolphin_on_land": {
         "minecraft:navigation.generic": {
           "is_amphibious": true,
-          "can_path_over_water": true,
-          "can_swim": true,
+          "can_float": true,
+          "can_swim": false,
           "can_walk": true,
           "can_breach": false,
           "can_jump": false
@@ -131,8 +119,8 @@
       "minecraft:dolphin_on_land_in_rain": {
         "minecraft:navigation.generic": {
           "is_amphibious": true,
-          "can_path_over_water": true,
-          "can_swim": true,
+          "can_float": false,
+          "can_swim": false,
           "can_walk": true,
           "can_breach": false,
           "can_jump": false
@@ -159,13 +147,16 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:dolphin"
+      },
       "minecraft:nameable": {
       },
       "minecraft:type_family": {
         "family": [ "dolphin" ]
       },
       "minecraft:collision_box": {
-        "width": 0.9,
+        "width": 1.0,
         "height": 0.6
       },
       "minecraft:health": {
@@ -191,11 +182,11 @@
       },
       "minecraft:navigation.generic": {
         "is_amphibious": true,
-        "can_path_over_water": true,
+        "can_float": false,
         "can_swim": true,
         "can_walk": false,
         "can_breach": true,
-        "can_sink": false
+        "can_sink":  false
       },
 
       "minecraft:underwater_movement": {
@@ -248,7 +239,7 @@
       },
       "minecraft:behavior.find_underwater_treasure": {
         "priority": 2,
-		"speed_multiplier": 2.0,
+		    "speed_multiplier": 2.0,
         "search_range": 30,
         "stop_distance":  50
       },

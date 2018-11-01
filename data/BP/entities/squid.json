@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:squid",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups":{
       "minecraft:squid_baby": {
@@ -32,8 +20,11 @@
     },
     
     "components":{
-	    "minecraft:nameable": {
-	    },
+      "minecraft:identifier": {
+        "id": "minecraft:squid"
+      },
+	  "minecraft:nameable": {
+	  },
       "minecraft:type_family": {
         "family":["squid"]          
       },
@@ -62,8 +53,8 @@
         "value": 0.2
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
-        "can_sink": false
+        "can_float": true,
+        "can_sink":  false
       },
       "minecraft:movement.basic": {
       },

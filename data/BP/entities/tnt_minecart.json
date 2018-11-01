@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:tnt_minecart",
-      "minecraft:spawn_egg": {
-        "value": false
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:primed_tnt": {
@@ -21,23 +9,6 @@
 
           },
           "fuseLength": 4,
-          "fuseLit": true,
-          "power": 3,
-          "causesFire": false
-        },
-        "minecraft:rail_sensor": {
-          
-        
-        },
-        "minecraft:is_ignited": {
-        }
-      },
-      "minecraft:instant_explode_tnt": {
-        "minecraft:explode": {
-          "on_activate": {
-
-          },
-          "fuseLength": 0,
           "fuseLit": true,
           "power": 3,
           "causesFire": false
@@ -124,6 +95,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:tnt_minecart"
+      },
       "minecraft:type_family": {
         "family": [ "minecart", "inanimate" ]
       },
@@ -156,18 +130,6 @@
         "add": {
           "component_groups": [
             "minecraft:primed_tnt"
-          ]
-        }
-      },
-      "minecraft:on_instant_prime": {
-        "remove": {
-          "component_groups": [
-            "minecraft:inactive"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:instant_explode_tnt"
           ]
         }
       }

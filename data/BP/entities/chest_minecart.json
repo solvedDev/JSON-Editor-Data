@@ -1,19 +1,11 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:chest_minecart",
-      "minecraft:spawn_egg": {
-        "value": false
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:chest_minecart"
+      },
       "minecraft:type_family": {
         "family": [ "minecart", "inanimate" ]
       },

@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:parrot",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:parrot_red": {
@@ -100,6 +88,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:parrot"
+      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0
@@ -126,7 +117,7 @@
         "value": true
       },
       "minecraft:navigation.fly": {
-        "can_path_over_water": true
+        "can_float": true
       },
       "minecraft:movement.fly": {
       },

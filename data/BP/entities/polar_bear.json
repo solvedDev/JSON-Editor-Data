@@ -1,18 +1,6 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:polar_bear",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
 
     "component_groups": {
       "minecraft:baby": {
@@ -103,6 +91,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:polar_bear"
+      },
       "minecraft:type_family": {
         "family": [ "polarbear" ]
       },
@@ -123,7 +114,7 @@
         "value": 0.25
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_damage_blocks": true
       },
       "minecraft:movement.basic": {

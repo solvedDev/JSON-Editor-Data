@@ -1,18 +1,7 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:boat",
-      "minecraft:spawn_egg": {
-        "value": false
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "component_groups": {
       "minecraft:boat_leashed": {
         "minecraft:behavior.move_towards_restriction": {
@@ -23,6 +12,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:boat"
+      },
       "minecraft:type_family": {
         "family": [ "boat", "inanimate" ]
       },

@@ -1,18 +1,7 @@
 {
-  "format_version": "1.8.0-beta.1",
   "minecraft:entity": {
-    "description": {
-      "identifier": "minecraft:slime",
-      "minecraft:spawn_egg": {
-        "value": true
-      },
-      "minecraft:is_summonable": {
-        "value": true
-      },
-      "minecraft:is_experimental": {
-        "value": false
-      }
-    },
+    "format_version": "1.2.0",
+
     "component_groups": {
       "minecraft:slime_large": {
         "minecraft:collision_box": {
@@ -81,6 +70,9 @@
     },
 
     "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:slime"
+      },
       "minecraft:type_family": {
         "family": [ "slime", "monster" ]
       },
@@ -89,7 +81,7 @@
         "suffocateTime": 0
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true,
+        "can_float": true,
         "avoid_water": true
       },
       "minecraft:jump.static": {
@@ -149,7 +141,7 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
+	    "minecraft:physics": {
       }
     },
 
